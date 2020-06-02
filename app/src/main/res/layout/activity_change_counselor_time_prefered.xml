@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".view.activity.ChangeCounselorTimePreferedActivity"
+        android:orientation="vertical"
+
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+    <LinearLayout android:id="@+id/activity_change_password_linear" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" app:layout_constraintTop_toTopOf="parent"
+                  app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" >
+        <TextView style="@style/Title" android:text="선호하는 상담 일정"/>
+        <View style="@style/Divider"/>
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:layout_margin="16dp"
+        android:text="상담사가 선호하는 시간대를 최소 1개 이상 입력해주세요. 반드시 해당 시간에만 상담할 수 있는 것은 아니지만,
+내담자들이 이 일정을 참고하여 상담을 신청하게 됩니다."/>
+
+        <TextView style="@style/Title2" android:text="1) 선호하는 요일"/>
+        <CheckBox android:id="@+id/activity_change_counselor_day_prefered_cb0_all" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_marginRight="8dp" android:text="전체"/>
+        <CheckBox android:id="@+id/activity_change_counselor_day_prefered_cb1_mon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_marginRight="8dp" android:text="월요일"/>
+        <CheckBox android:id="@+id/activity_change_counselor_day_prefered_cb2_tue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_marginRight="8dp" android:text="화요일"/>
+        <CheckBox android:id="@+id/activity_change_counselor_day_prefered_cb3_wed" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_marginRight="8dp" android:text="수요일"/>
+        <CheckBox android:id="@+id/activity_change_counselor_day_prefered_cb4_thur" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_marginRight="8dp" android:text="목요일"/>
+        <CheckBox android:id="@+id/activity_change_counselor_day_prefered_cb5_fri" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_marginRight="8dp" android:text="금요일"/>
+        <CheckBox android:id="@+id/activity_change_counselor_day_prefered_cb6_sat" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_marginRight="8dp" android:text="토요일"/>
+        <CheckBox android:id="@+id/activity_change_counselor_day_prefered_cb7_sun" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_marginRight="8dp" android:text="일요일"/>
+
+
+
+        <TextView style="@style/Title2" android:text="2) 선호하는 시간대" android:paddingTop="16dp"/>
+        <CheckBox android:id="@+id/activity_change_counselor_time_prefered_cb0" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_marginRight="8dp" android:text="8~12시"/>
+        <CheckBox android:id="@+id/activity_change_counselor_time_prefered_cb1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_marginRight="8dp" android:text="12~16시"/>
+        <CheckBox android:id="@+id/activity_change_counselor_time_prefered_cb2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_marginRight="8dp" android:text="16~20시"/>
+        <CheckBox android:id="@+id/activity_change_counselor_time_prefered_cb3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_marginRight="8dp" android:text="20~24시"/>
+
+
+    </LinearLayout>
+
+    <Button android:layout_width="match_parent" android:layout_height="wrap_content" android:text="확인" android:backgroundTint="@color/customLightGreen"
+
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+    />
+</androidx.constraintlayout.widget.ConstraintLayout>

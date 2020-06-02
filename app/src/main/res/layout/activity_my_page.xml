@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.activity.PermissionActivity"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:layout_gravity="center">
+    <TextView style="@style/Title" android:text="마이페이지" />
+    <View style="@style/Divider"/>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:padding="8dp" android:gravity="center">
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:padding="8dp" android:layout_weight="1">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="닉네임 변경" android:textColor="@android:color/black"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="망고111" />
+        </LinearLayout>
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@android:drawable/ic_menu_report_image" android:padding="8dp"/>
+    </LinearLayout>
+    <View style="@style/Divider"/>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:padding="8dp" android:gravity="center">
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:text="비밀번호 변경" android:textColor="@android:color/black" android:padding="8dp" android:layout_weight="1"/>
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@android:drawable/ic_menu_report_image" android:padding="8dp"/>
+    </LinearLayout>
+    <View style="@style/Divider"/>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:padding="8dp" android:gravity="center">
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:padding="8dp" android:layout_weight="1">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="상담 접수지" android:textColor="@android:color/black"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="작성 중" android:textColor="@color/customDarkGreen"/>
+        </LinearLayout>
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@android:drawable/ic_menu_report_image" android:padding="8dp"/>
+    </LinearLayout>
+    <View style="@style/Divider"/>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:padding="8dp" android:gravity="center">
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:text="상담 동의서" android:textColor="@android:color/black" android:padding="8dp" android:layout_weight="1"/>
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@android:drawable/ic_menu_report_image" android:padding="8dp"/>
+    </LinearLayout>
+    <View style="@style/Divider"/>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:padding="8dp" android:gravity="center">
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:text="상담 내역" android:textColor="@android:color/black" android:padding="8dp" android:layout_weight="1"/>
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@android:drawable/ic_menu_report_image" android:padding="8dp"/>
+    </LinearLayout>
+    <View style="@style/Divider"/>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:padding="8dp" android:gravity="center">
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:text="앱 설정" android:textColor="@android:color/black" android:padding="8dp" android:layout_weight="1"/>
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@android:drawable/ic_menu_report_image" android:padding="8dp"/>
+    </LinearLayout>
+    <View style="@style/Divider"/>
+
+
+
+</LinearLayout>

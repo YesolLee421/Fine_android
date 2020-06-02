@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.activity.SettingsActivity"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:layout_gravity="center">
+    <TextView style="@style/Title" android:text="앱 설정" />
+    <View style="@style/Divider"/>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:padding="8dp" android:gravity="center">
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:text="약관 및 정책" android:textColor="@android:color/black" android:padding="8dp" android:layout_weight="1"/>
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@android:drawable/ic_menu_report_image" android:padding="8dp"/>
+    </LinearLayout>
+    <View style="@style/Divider"/>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:padding="8dp" android:gravity="center">
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:text="개인정보 처리방침" android:textColor="@android:color/black" android:padding="8dp" android:layout_weight="1"/>
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@android:drawable/ic_menu_report_image" android:padding="8dp"/>
+    </LinearLayout>
+    <View style="@style/Divider"/>
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_gravity="left" android:paddingLeft="16dp" android:paddingTop="8dp"  android:text="앱 버전 정보" android:textColor="@android:color/black"/>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_gravity="left" android:paddingLeft="16dp" android:paddingBottom="8dp" android:text="1.0.0" />
+    <View style="@style/Divider"/>
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_gravity="left" android:padding="16dp" android:text="로그아웃" android:textColor="@android:color/black"/>
+    <View style="@style/Divider"/>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:padding="8dp" android:gravity="center">
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:text="회원 탈퇴" android:textColor="@android:color/black" android:padding="8dp" android:layout_weight="1"/>
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@android:drawable/ic_menu_report_image" android:padding="8dp"/>
+    </LinearLayout>
+    <View style="@style/Divider"/>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:padding="8dp" android:gravity="center">
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:text="환불 규정" android:textColor="@android:color/black" android:padding="8dp" android:layout_weight="1"/>
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@android:drawable/ic_menu_report_image" android:padding="8dp"/>
+    </LinearLayout>
+    <View style="@style/Divider"/>
+
+
+
+</LinearLayout>
