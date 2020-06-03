@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent" android:padding="8dp"
+              android:layout_height="wrap_content">
+    <ImageView android:layout_width="50dp" android:layout_height="50dp" android:src="@drawable/eco_home"/>
+
+    <TextView android:id="@+id/item_chat_counselor_content" android:text="안녕하세요, 상담사 이예솔입니다.\n상담을 시작하기 전, 상담을 원하는 시간을 말씀해주세요."
+              android:maxWidth="250dp" android:background="@android:color/white" android:padding="16dp" android:layout_marginLeft="8dp" android:layout_marginRight="8dp"
+              android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+    <TextView android:id="@+id/item_chat_counselor_time" android:text="15:50" android:layout_gravity="bottom"
+              android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+</LinearLayout>

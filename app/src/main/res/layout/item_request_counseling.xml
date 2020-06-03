@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <androidx.cardview.widget.CardView android:layout_width="match_parent"
+                                       android:layout_height="wrap_content" app:cardElevation="8dp" app:contentPadding="8dp" app:cardUseCompatPadding="true">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+            <TextView style="@style/Title" android:text="채팅 상담 1회기권"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:padding="8dp"
+                      android:text="회기당 50분 * 1회\n결제일 후 2주간 유효"/>
+            <TextView style="@style/Title" android:text="20,000" android:textColor="@color/customRed" android:gravity="end"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

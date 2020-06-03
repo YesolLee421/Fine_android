@@ -9,6 +9,20 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".view.activity.ChatRoomActivity">
+        </activity>
+        <activity android:name=".view.activity.CheckPaymentActivity">
+        </activity>
+        <activity android:name=".view.activity.RequestCounselingActivity">
+        </activity>
+        <activity android:name=".view.activity.CounselorFilterActivity">
+        </activity>
+        <activity android:name=".view.activity.CounselorDetailActivity">
+        </activity>
+        <activity android:name=".view.activity.CounselListActivity">
+        </activity>
+        <activity android:name=".view.activity.ChangeCounselorProfileActivity">
+        </activity>
         <activity android:name=".view.activity.ChangeCounselorBankAccountActivity">
         </activity>
         <activity android:name=".view.activity.ChangeCounselorPriceActivity">

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".view.activity.ChangeCounselorProfileActivity"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:layout_gravity="center">
+
+    <LinearLayout android:id="@+id/activity_change_password_linear" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" app:layout_constraintTop_toTopOf="parent"
+                  app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" android:gravity="center_horizontal">
+        <TextView style="@style/Title" android:text="프로필 변경하기" />
+        <View style="@style/Divider"/>
+
+        <TextView style="@style/Title" android:text="호머 심슨 상담사" android:gravity="center" />
+        <TextView android:layout_height="wrap_content" android:layout_width="match_parent" android:text="총 132회 상담" android:gravity="center" />
+        <TextView android:layout_height="wrap_content" android:layout_width="match_parent" android:text="전문 상담사 인증 완료" android:gravity="center" android:textColor="@color/customDarkGreen"/>
+
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/homer1"/>
+        <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="사진 변경" android:backgroundTint="@color/customLightGreen"/>
+        <TextView style="@style/Title2" android:text="한 줄 자기소개"  android:paddingLeft="16dp" android:paddingRight="16dp"/>
+        <EditText android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textMultiLine" android:layout_marginLeft="20dp" android:layout_marginRight="20dp" android:hint="내용을 입력하세요."/>
+
+
+
+    </LinearLayout>
+
+    <Button android:layout_width="match_parent" android:layout_height="wrap_content" android:text="확인" android:backgroundTint="@color/customLightGreen"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

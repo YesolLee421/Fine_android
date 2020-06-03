@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".view.activity.CounselorDetailActivity"
+        android:orientation="vertical"
+        android:paddingTop="8dp">
+
+    <ImageView android:id="@+id/counselor_detail_picture" android:layout_width="100dp" android:layout_height="150dp"
+               app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" android:src="@drawable/homer1"/>
+
+    <TextView style="@style/Title" android:id="@+id/counselor_detail_name" android:text="호머 심슨 상담사"
+              app:layout_constraintTop_toTopOf="parent"
+              app:layout_constraintStart_toEndOf="@+id/counselor_detail_picture" android:layout_width="wrap_content"/>
+    <TextView android:id="@+id/counselor_detail_description" android:layout_width="wrap_content" android:layout_height="wrap_content"
+              app:layout_constraintStart_toEndOf="@+id/counselor_detail_picture"
+              app:layout_constraintTop_toBottomOf="@+id/counselor_detail_name"
+              app:layout_constraintEnd_toEndOf="parent"
+              android:layout_weight="1"
+              android:maxWidth="300dp"
+              android:text="심리상담으로 내담자의 삶에 긍정적인 변화의 꽃을 피우기를 소망합니다."/>
+    <ImageView android:id="@+id/counselor_detail_ic_help" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@android:drawable/ic_menu_search"
+               app:layout_constraintEnd_toStartOf="@+id/counselor_detail_help" app:layout_constraintBottom_toBottomOf="@+id/counselor_detail_picture"/>
+    <TextView android:id="@+id/counselor_detail_help" android:gravity="end"
+              android:layout_width="wrap_content" android:layout_height="wrap_content"
+              app:layout_constraintEnd_toEndOf="@+id/counselor_detail_description" app:layout_constraintBottom_toBottomOf="@+id/counselor_detail_picture"
+              app:layout_constraintTop_toTopOf="@+id/counselor_detail_ic_help"
+              android:text="100명 이상 도움"/>
+
+    <LinearLayout android:id="@+id/counselor_detail_tg_box" android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+                  app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                  android:padding="8dp" app:layout_constraintTop_toBottomOf="@+id/counselor_detail_help">
+        <ToggleButton android:layout_height="wrap_content" android:layout_width="wrap_content"
+                      android:id="@+id/counselor_detail_about" android:layout_weight="1"/>
+        <ToggleButton android:layout_height="wrap_content" android:layout_width="wrap_content"
+                      android:id="@+id/counselor_detail_career" android:layout_weight="1"/>
+        <ToggleButton android:layout_height="wrap_content" android:layout_width="wrap_content"
+                      android:id="@+id/counselor_detail_time" android:layout_weight="1"/>
+    </LinearLayout>
+
+
+    <View style="@style/Divider" android:id="@+id/counselor_detail_divider1" android:layout_marginBottom="20dp"
+          app:layout_constraintTop_toBottomOf="@+id/counselor_detail_tg_box" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ScrollView android:id="@+id/counselor_detail_scroll" android:layout_width="match_parent" android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/counselor_detail_divider1" app:layout_constraintBottom_toTopOf="@+id/counselor_detail_btn_box"
+                app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout android:id="@+id/counselor_detail_about_box" android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:orientation="vertical" android:layout_margin="8dp" android:padding="8dp">
+
+            <TextView style="@style/Title2" android:text="상담사님과의 심리상담 효과"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="자신을 온전히 인정하고 문제를 정확히 인지하고 분석할 수 있습니다. 또한 자신의 마음과 생각을 주도적으로 관리할 수 있습니다.
+                      \n그러면 인생 전체를 안정적으로 살아갈 수 있습니다."/>
+
+            <TextView style="@style/Title2" android:text="심리상담을 망설이는 분에게"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="문제만 해결하기보다 문제를 잘 바라볼 수 있는 힘을 함께 찾아보겠습니다."/>
+
+            <TextView style="@style/Title2" android:text="상담사님의 심리상담 방식"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="힘들게 느끼는 상황과 문제를 스스로 알아내고 구체화할 수 있도록 도와줍니다."/>
+
+            <View style="@style/Divider" android:layout_marginTop="20dp" android:layout_marginBottom="20dp"/>
+
+
+            <TextView style="@style/Title2" android:text="자격사항"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="전문상담사 2급(한국상담학회)\n청소년상담사 2급 (여성가족부)\n전문상담교사 2급 (교육부)\n사회복지사 1급 (보건복지부)"/>
+
+            <TextView style="@style/Title2" android:text="경력"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="현) 동작구정신건강센터 상담사"/>
+
+            <TextView style="@style/Title2" android:text="학력"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="경북대학교 심리학과 학사 졸업\n경북대학교 교육대학원 상담교육전공 "/>
+
+            <View style="@style/Divider" android:layout_marginTop="20dp" android:layout_marginBottom="20dp"/>
+
+
+
+            <TextView style="@style/Title2" android:text="상담사님의 선호 일정"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="실제 상담 일정은 상담사님과 협의 후 진행됩니다."/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="월, 수, 금 16~20시, 20~24시" android:textColor="@color/customDarkGreen"/>
+
+            <TableLayout android:id="@+id/counselor_detail_time_box" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:stretchColumns="0, 1, 2, 3, 4, 5, 6,7, 8">
+                <TableRow></TableRow>
+                <TableRow android:background="@color/customLightGrey"><TextView android:text=""/>
+                    <TextView android:text="월"/><TextView android:text="화"/><TextView android:text="수"/><TextView android:text="목"/>
+                    <TextView android:text="금"/><TextView android:text="토"/><TextView android:text="일"/></TableRow>
+                <TableRow><TextView android:text="8~12" android:background="@color/customLightGrey"/>
+                    <TextView android:text="X"/><TextView android:text="X"/><TextView android:text="X"/><TextView android:text="X"/>
+                    <TextView android:text="X"/><TextView android:text="X"/><TextView android:text="X"/>
+                </TableRow>
+                <TableRow><TextView android:text="12~16" android:background="@color/customLightGrey"/>
+                    <TextView android:text="X"/><TextView android:text="X"/><TextView android:text="X"/><TextView android:text="X"/>
+                    <TextView android:text="X"/><TextView android:text="X"/><TextView android:text="X"/>
+                </TableRow>
+                <TableRow><TextView android:text="16~20" android:background="@color/customLightGrey"/>
+                    <TextView android:text="O" android:textColor="@color/customDarkGreen"/><TextView android:text="X"/><TextView android:text="O" android:textColor="@color/customDarkGreen"/><TextView android:text="X"/>
+                    <TextView android:text="O" android:textColor="@color/customDarkGreen"/><TextView android:text="X"/><TextView android:text="X"/>
+                </TableRow>
+                <TableRow><TextView android:text="20~24" android:background="@color/customLightGrey"/>
+                    <TextView android:text="O" android:textColor="@color/customDarkGreen"/><TextView android:text="X"/><TextView android:text="O" android:textColor="@color/customDarkGreen"/><TextView android:text="X"/>
+                    <TextView android:text="O" android:textColor="@color/customDarkGreen"/><TextView android:text="X"/><TextView android:text="X"/>
+                </TableRow>
+            </TableLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!--
+    <View style="@style/Divider" android:id="@+id/counselor_detail_divider2" android:layout_marginBottom="20dp"
+          app:layout_constraintTop_toBottomOf="@+id/counselor_detail_scroll" app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toTopOf="@+id/counselor_detail_btn_box"/>
+          -->
+
+    <LinearLayout android:id="@+id/counselor_detail_btn_box" android:layout_width="match_parent" android:layout_height="wrap_content"
+                  app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="20dp" android:background="@android:color/white"
+                  app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent" android:orientation="horizontal"
+                  android:gravity="center">
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                  android:gravity="center" android:text="1회기" android:layout_weight="1"/>
+        <TextView style="@style/Title" android:layout_width="0dp"
+                  android:gravity="center" android:text="20,000" android:layout_weight="1"/>
+        <Button android:id="@+id/counselor_detail_btn" android:layout_width="wrap_content" android:gravity="center"
+                android:layout_height="wrap_content" android:layout_weight="1"
+                android:text="상담 신청" android:backgroundTint="@color/customLightGreen"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

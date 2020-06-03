@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        tools:context=".view.activity.CounselorFilterActivity"
+        android:orientation="vertical"
+
+        android:paddingTop="8dp">
+
+    <TextView style="@style/Title" android:layout_width="wrap_content" android:id="@+id/activity_counselor_filter_title"
+              android:gravity="center" android:text="상담사 조건 선택"
+              app:layout_constraintTop_toTopOf="@+id/counsel_list_filter_cancel"
+              app:layout_constraintStart_toEndOf="@+id/counsel_list_filter_cancel" android:layout_marginLeft="8dp"
+              android:layout_marginStart="8dp" app:layout_constraintEnd_toStartOf="@+id/counsel_list_filter_reset"
+              android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
+              app:layout_constraintBottom_toBottomOf="@+id/counsel_list_filter_cancel"/>
+    <TextView android:id="@+id/counsel_list_filter_cancel" android:layout_width="wrap_content"
+              android:layout_height="wrap_content" android:gravity="center" android:text="취소" android:padding="8dp"
+              app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+    />
+    <TextView android:id="@+id/counsel_list_filter_reset" android:layout_width="wrap_content"
+              android:layout_height="wrap_content" android:gravity="center" android:text="초기화" android:padding="8dp"
+              app:layout_constraintTop_toTopOf="@+id/activity_counselor_filter_title"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintBottom_toBottomOf="@+id/activity_counselor_filter_title"/>
+
+
+    <View style="@style/Divider" android:id="@+id/activity_counselor_filter_divider1" android:layout_marginBottom="20dp"
+          app:layout_constraintTop_toBottomOf="@+id/activity_counselor_filter_title"
+          app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView style="@style/Title2" android:id="@+id/counsel_list_filter_gender"
+              app:layout_constraintTop_toBottomOf="@+id/activity_counselor_filter_divider1"
+              app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+              android:padding="16dp"
+              android:text="상담사 성별"/>
+    <LinearLayout android:id="@+id/counselor_list_filter_gender_box" android:layout_width="match_parent" android:layout_height="wrap_content"
+                  app:layout_constraintStart_toStartOf="@+id/counsel_list_filter_gender" android:padding="8dp"
+                  app:layout_constraintEnd_toEndOf="@+id/counsel_list_filter_gender" android:orientation="horizontal"
+                  app:layout_constraintTop_toBottomOf="@+id/counsel_list_filter_gender">
+        <ToggleButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/counselor_list_filter_gender_tg1" android:layout_weight="1"/>
+        <ToggleButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/counselor_list_filter_gender_tg2" android:layout_weight="1"/>
+        <ToggleButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/counselor_list_filter_gender_tg3" android:layout_weight="1"/>
+    </LinearLayout>
+
+    <TextView style="@style/Title2" android:id="@+id/counsel_list_filter_count"
+              app:layout_constraintTop_toBottomOf="@+id/counselor_list_filter_gender_box"
+              app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+              android:padding="16dp"
+              android:text="최소 상담 횟수" android:layout_marginTop="32dp" />
+    <TableLayout android:id="@+id/counsel_list_filter_count_box" android:layout_width="match_parent" android:layout_height="wrap_content"
+                 app:layout_constraintStart_toStartOf="@+id/counsel_list_filter_count"
+                 app:layout_constraintEnd_toEndOf="@+id/counsel_list_filter_count"
+                 app:layout_constraintTop_toBottomOf="@+id/counsel_list_filter_count" android:padding="8dp">
+        <TableRow>
+            <ToggleButton android:id="@+id/counselor_list_filter_count_tg1" android:layout_weight="1"/>
+            <ToggleButton android:id="@+id/counselor_list_filter_count_tg2" android:layout_weight="1"/>
+            <ToggleButton android:id="@+id/counselor_list_filter_count_tg3" android:layout_weight="1"/>
+        </TableRow>
+        <TableRow>
+            <ToggleButton android:id="@+id/counselor_list_filter_count_tg4" android:layout_weight="1"/>
+            <ToggleButton android:id="@+id/counselor_list_filter_count_tg5" android:layout_weight="1"/>
+            <ToggleButton android:id="@+id/counselor_list_filter_count_tg6" android:layout_weight="1"/>
+        </TableRow>
+    </TableLayout>
+
+    <TextView style="@style/Title2" android:id="@+id/counsel_list_filter_price"
+              app:layout_constraintTop_toBottomOf="@+id/counsel_list_filter_count_box"
+              app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+              android:padding="16dp"
+              android:text="회기 당 가격" android:layout_marginTop="32dp" />
+
+    <LinearLayout android:id="@+id/counselor_list_filter_price_box" android:layout_width="match_parent" android:layout_height="wrap_content"
+                  app:layout_constraintStart_toStartOf="@+id/counsel_list_filter_price" android:paddingLeft="16dp" android:paddingRight="16dp"
+                  app:layout_constraintEnd_toEndOf="@+id/counsel_list_filter_price" android:orientation="horizontal"
+                  app:layout_constraintTop_toBottomOf="@+id/counsel_list_filter_price">
+        <EditText android:layout_width="wrap_content" android:layout_height="wrap_content" android:hint="0" android:layout_weight="1"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="원 ~ "/>
+        <EditText android:layout_width="wrap_content" android:layout_height="wrap_content" android:hint="0" android:layout_weight="1"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="원"/>
+    </LinearLayout>
+
+    <TextView style="@style/Title2" android:id="@+id/counsel_list_filter_discount"
+              app:layout_constraintTop_toBottomOf="@+id/counselor_list_filter_price_box"
+              app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+              android:padding="16dp"
+              android:text="할인 여부" android:layout_marginTop="32dp" />
+
+    <LinearLayout android:id="@+id/counselor_list_filter_discount_box" android:layout_width="match_parent" android:layout_height="wrap_content"
+                  app:layout_constraintStart_toStartOf="@+id/counsel_list_filter_discount" android:padding="8dp"
+                  app:layout_constraintEnd_toEndOf="@+id/counsel_list_filter_discount" android:orientation="horizontal"
+                  app:layout_constraintTop_toBottomOf="@+id/counsel_list_filter_discount">
+        <ToggleButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/counselor_list_filter_discount_tg1" android:layout_weight="1"/>
+        <ToggleButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/counselor_list_filter_discount_tg2" android:layout_weight="1"/>
+    </LinearLayout>
+
+
+    <Button android:layout_width="match_parent" android:layout_height="wrap_content" android:text="필터 적용"
+            android:backgroundTint="@color/customLightGreen"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
