@@ -4,12 +4,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.fine.R
 
-class ChangePasswordActivity : BaseActivity() {
+class CheckCounselPaperActivity : BaseActivity() {
     override fun initPresenter() {
+
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_change_password)
+        setContentView(R.layout.activity_write_counsel_paper2)
     }
 }

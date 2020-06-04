@@ -6,7 +6,6 @@ import com.example.fine.R
 
 class ChangeCounselorPriceActivity : BaseActivity() {
     override fun initPresenter() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

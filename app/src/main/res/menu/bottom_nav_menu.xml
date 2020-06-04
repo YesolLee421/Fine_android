@@ -15,5 +15,10 @@
             android:enabled="true"
             android:icon="@drawable/search"
             android:title="마이페이지"/>
+    <item
+            android:id="@+id/my_page_counselor"
+            android:enabled="true"
+            android:icon="@drawable/search"
+            android:title="상담사마이"/>
 
 </menu>

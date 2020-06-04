@@ -11,7 +11,7 @@
         android:paddingBottom="8dp"
         android:layout_gravity="center">
 
-    <LinearLayout android:id="@+id/activity_change_password_linear" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" app:layout_constraintTop_toTopOf="parent"
+    <LinearLayout android:id="@+id/write_counsel_paper_linear" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" app:layout_constraintTop_toTopOf="parent"
                   app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" android:gravity="center_horizontal">
         <TextView style="@style/Title" android:text="프로필 변경하기" />
         <View style="@style/Divider"/>

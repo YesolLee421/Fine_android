@@ -69,7 +69,7 @@
 
     <Button android:layout_width="match_parent" android:layout_height="wrap_content" android:text="채팅상담 입장"
             android:backgroundTint="@color/customLightGreen"
-            android:id="@+id/button"/>
+            android:id="@+id/case_detail_btn"/>
 
 
 

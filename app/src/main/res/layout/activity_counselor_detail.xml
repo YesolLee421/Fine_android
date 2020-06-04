@@ -46,7 +46,7 @@
           app:layout_constraintTop_toBottomOf="@+id/counselor_detail_tg_box" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"/>
 
     <ScrollView android:id="@+id/counselor_detail_scroll" android:layout_width="match_parent" android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/counselor_detail_divider1" app:layout_constraintBottom_toTopOf="@+id/counselor_detail_btn_box"
+                app:layout_constraintTop_toBottomOf="@+id/counselor_detail_divider1" app:layout_constraintBottom_toTopOf="@+id/write_counsel_paper_btn_box"
                 app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout android:id="@+id/counselor_detail_about_box" android:layout_width="match_parent" android:layout_height="wrap_content"
@@ -121,7 +121,7 @@
           app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toTopOf="@+id/counselor_detail_btn_box"/>
           -->
 
-    <LinearLayout android:id="@+id/counselor_detail_btn_box" android:layout_width="match_parent" android:layout_height="wrap_content"
+    <LinearLayout android:id="@+id/write_counsel_paper_btn_box" android:layout_width="match_parent" android:layout_height="wrap_content"
                   app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="20dp" android:background="@android:color/white"
                   app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent" android:orientation="horizontal"
                   android:gravity="center">

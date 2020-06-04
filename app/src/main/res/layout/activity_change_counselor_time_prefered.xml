@@ -10,7 +10,7 @@
         android:paddingTop="8dp"
         android:paddingBottom="8dp">
 
-    <LinearLayout android:id="@+id/activity_change_password_linear" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" app:layout_constraintTop_toTopOf="parent"
+    <LinearLayout android:id="@+id/write_counsel_paper_linear" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" app:layout_constraintTop_toTopOf="parent"
                   app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" >
         <TextView style="@style/Title" android:text="선호하는 상담 일정"/>
         <View style="@style/Divider"/>

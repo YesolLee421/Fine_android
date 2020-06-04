@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".view.activity.CheckCounselPaperActivity"
+        android:orientation="vertical"
+
+        android:paddingTop="8dp">
+
+    <TextView style="@style/Title" android:id="@+id/check_counsel_paper_title" android:gravity="center" android:text="상담 접수지" app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"/>
+
+    <View style="@style/Divider" android:id="@+id/check_counsel_paper_divider1" android:layout_marginBottom="20dp" app:layout_constraintTop_toBottomOf="@+id/check_counsel_paper_title" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/check_counsel_paper_divider1"
+                app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:orientation="vertical">
+
+            <LinearLayout android:orientation="horizontal" android:padding="8dp" android:layout_width="match_parent"
+                          android:layout_height="wrap_content" android:background="@color/customLightGrey">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:text="상담 정보 1" android:layout_weight="1"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:layout_weight="1" android:gravity="end" android:textColor="@color/customRed"
+                          android:text="수정하기 >"/>
+            </LinearLayout>
+
+            <TableLayout android:orientation="vertical" android:layout_width="match_parent"
+                         android:layout_height="wrap_content" android:padding="16dp">
+                <TableRow>
+                    <TextView android:layout_width="100dp" android:layout_gravity="center_vertical" android:text="성별"/>
+                    <TextView android:gravity="center_vertical" android:textColor="@android:color/black" android:text="여"/>
+                </TableRow>
+                <TableRow>
+                    <TextView android:layout_width="100dp" android:layout_gravity="center_vertical" android:text="출생연도"/>
+                    <TextView android:gravity="center_vertical" android:textColor="@android:color/black" android:text="1994"/>
+                </TableRow>
+                <TableRow>
+                    <TextView android:layout_width="100dp" android:layout_gravity="center_vertical" android:text="직업"/>
+                    <TextView android:gravity="center_vertical" android:textColor="@android:color/black" android:text="취준생"/>
+                </TableRow>
+            </TableLayout>
+
+            <LinearLayout android:orientation="horizontal" android:padding="8dp" android:layout_width="match_parent"
+                          android:layout_height="wrap_content" android:background="@color/customLightGrey">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:text="상담 정보 2" android:layout_weight="1"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:layout_weight="1" android:gravity="end" android:textColor="@color/customRed"
+                          android:text="수정하기 >"/>
+            </LinearLayout>
+
+            <TableLayout android:orientation="vertical" android:layout_width="match_parent"
+                         android:layout_height="wrap_content" android:padding="16dp">
+                <TableRow>
+                    <TextView android:layout_width="100dp" android:layout_gravity="center_vertical" android:text="상담 경험"/>
+                    <TextView android:gravity="center_vertical" android:textColor="@android:color/black" android:text="없음"/>
+                </TableRow>
+                <TableRow>
+                    <TextView android:layout_width="100dp" android:layout_gravity="center_vertical" android:text="병원 진료 경험"/>
+                    <TextView android:gravity="center_vertical" android:textColor="@android:color/black" android:text="없음"/>
+                </TableRow>
+                <TableRow>
+                    <TextView android:layout_width="100dp" android:layout_gravity="center_vertical" android:text="나의 상황"/>
+                    <TextView android:gravity="center_vertical" android:textColor="@android:color/black" android:text="취업/진로"/>
+                </TableRow>
+                <TableRow>
+                    <TextView android:layout_width="100dp" android:layout_gravity="center_vertical" android:text="심리적 어려움"/>
+                    <TextView android:gravity="center_vertical" android:textColor="@android:color/black" android:text="우울, 무기력, 자존감.."/>
+                </TableRow>
+            </TableLayout>
+
+            <LinearLayout android:orientation="horizontal" android:padding="8dp" android:layout_width="match_parent"
+                          android:layout_height="wrap_content" android:background="@color/customLightGrey">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:text="상담 정보 3" android:layout_weight="1"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:layout_weight="1" android:gravity="end" android:textColor="@color/customRed"
+                          android:text="수정하기 >"/>
+            </LinearLayout>
+
+            <TableLayout android:orientation="vertical" android:layout_width="match_parent"
+                         android:layout_height="wrap_content" android:padding="16dp">
+                <TableRow>
+                    <TextView android:layout_width="100dp" android:layout_gravity="center_vertical" android:text="종교"/>
+                    <TextView android:gravity="center_vertical" android:textColor="@android:color/black" android:text="없음"/>
+                </TableRow>
+                <TableRow>
+                    <TextView android:layout_width="100dp" android:layout_gravity="center_vertical" android:text="최종 학력"/>
+                    <TextView android:gravity="center_vertical" android:textColor="@android:color/black" android:text="학사 졸업"/>
+                </TableRow>
+                <TableRow>
+                    <TextView android:layout_width="100dp" android:layout_gravity="center_vertical" android:text="경제생활수준"/>
+                    <TextView android:gravity="center_vertical" android:textColor="@android:color/black" android:text="여유로운 편"/>
+                </TableRow>
+                <TableRow>
+                    <TextView android:layout_width="100dp" android:layout_gravity="center_vertical" android:text="결혼 여부"/>
+                    <TextView android:gravity="center_vertical" android:textColor="@android:color/black" android:text="미혼"/>
+                </TableRow>
+                <TableRow>
+                    <TextView android:layout_width="100dp" android:layout_gravity="center_vertical" android:text="동거인 유무"/>
+                    <TextView android:gravity="center_vertical" android:textColor="@android:color/black" android:text="없음"/>
+                </TableRow>
+                <TableRow>
+                    <TextView android:layout_width="100dp" android:layout_gravity="center_vertical" android:text="원가족관계"/>
+                    <TextView android:gravity="center_vertical" android:textColor="@android:color/black" android:text="부, 모, 동생"/>
+                </TableRow>
+            </TableLayout>
+
+            <LinearLayout android:orientation="horizontal" android:padding="8dp" android:layout_width="match_parent"
+                          android:layout_height="wrap_content" android:background="@color/customLightGrey">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:text="상담사 참고사항" android:layout_weight="1"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:layout_weight="1" android:gravity="end" android:textColor="@color/customRed"
+                          android:text="수정하기 >"/>
+            </LinearLayout>
+
+            <TableLayout android:orientation="vertical" android:layout_width="match_parent"
+                         android:layout_height="wrap_content" android:padding="16dp">
+                <TableRow>
+                    <TextView android:layout_width="100dp" android:layout_gravity="center_vertical" android:text="내용"/>
+                    <TextView android:gravity="center_vertical" android:textColor="@android:color/black"
+                               android:text="미작성"/>
+                </TableRow>
+            </TableLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+    <Button android:layout_width="match_parent" android:layout_height="wrap_content" android:text="제출하기"
+            android:backgroundTint="@color/customLightGreen" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

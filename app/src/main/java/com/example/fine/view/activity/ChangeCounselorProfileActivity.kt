@@ -6,8 +6,6 @@ import com.example.fine.R
 
 class ChangeCounselorProfileActivity : BaseActivity() {
     override fun initPresenter() {
-
-
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

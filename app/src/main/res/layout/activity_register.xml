@@ -58,6 +58,7 @@
 
     </LinearLayout>
 
-    <Button android:layout_width="match_parent" android:layout_height="wrap_content" android:text="가입 완료" android:backgroundTint="@color/customLightGreen"/>
+    <Button android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/register_btn_register"
+            android:text="가입 완료" android:backgroundTint="@color/customLightGreen"/>
 
 </LinearLayout>

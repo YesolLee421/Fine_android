@@ -17,7 +17,7 @@
     <ScrollView android:layout_width="match_parent" android:layout_height="wrap_content" app:layout_constraintTop_toTopOf="@+id/activity_change_counselor_intro_divider1"
                 app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
 
-        <LinearLayout android:id="@+id/activity_change_password_linear" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_margin="8dp">
+        <LinearLayout android:id="@+id/write_counsel_paper_linear" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_margin="8dp">
 
             <TextView style="@style/Title2" android:text="1) 상담사님과의 심리상담 효과"/>
             <EditText android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="내용을 입력해주세요."

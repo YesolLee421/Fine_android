@@ -13,7 +13,7 @@
     <TextView style="@style/Title" android:id="@+id/activity_change_counselor_career_title" android:text="회기당 가격 변경" app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"/>
     <View style="@style/Divider" android:id="@+id/activity_change_counselor_career_divider1" android:layout_marginBottom="20dp" app:layout_constraintTop_toBottomOf="@+id/activity_change_counselor_career_title" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"/>
 
-    <LinearLayout android:id="@+id/activity_change_password_linear" app:layout_constraintTop_toBottomOf="@+id/activity_change_counselor_career_divider1"
+    <LinearLayout android:id="@+id/write_counsel_paper_linear" app:layout_constraintTop_toBottomOf="@+id/activity_change_counselor_career_divider1"
                   app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_margin="8dp">
 
 

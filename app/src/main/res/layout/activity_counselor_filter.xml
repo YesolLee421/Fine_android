@@ -97,7 +97,8 @@
     </LinearLayout>
 
 
-    <Button android:layout_width="match_parent" android:layout_height="wrap_content" android:text="필터 적용"
+    <Button android:id="@+id/counselor_filter_btn_apply"
+            android:layout_width="match_parent" android:layout_height="wrap_content" android:text="필터 적용"
             android:backgroundTint="@color/customLightGreen"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
