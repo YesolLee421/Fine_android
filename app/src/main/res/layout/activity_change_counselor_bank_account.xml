@@ -9,22 +9,25 @@
         android:gravity="center_horizontal"
         android:padding="8dp"
         android:layout_gravity="center">
-    <TextView style="@style/Title" android:text="입금계좌" />
-    <View style="@style/Divider" android:layout_marginBottom="20dp"/>
 
-    <TextView style="@style/Title2" android:text="현재 입금계좌" />
-    <View style="@style/Divider" android:layout_marginRight="8dp" android:layout_marginLeft="8dp"/>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_weight="1">
+        <TextView style="@style/Title" android:text="입금계좌" />
+        <View style="@style/Divider" android:layout_marginBottom="20dp"/>
 
-    <TextView style="@style/Title" android:text="신한은행" android:textStyle="normal"/>
-    <TextView style="@style/Title" android:text="110-345-234521" android:textStyle="normal" android:paddingBottom="40dp"/>
+        <TextView style="@style/Title2" android:text="현재 입금계좌" />
+        <View style="@style/Divider" android:layout_marginRight="8dp" android:layout_marginLeft="8dp"/>
 
-    <TextView style="@style/Title2" android:text="새로운 입금계좌" />
-    <View style="@style/Divider" android:layout_marginRight="8dp" android:layout_marginLeft="8dp"/>
-    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginRight="8dp" android:layout_marginLeft="8dp" android:text="본인 명의의 계좌만 사용 가능합니다."/>
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginRight="8dp" android:layout_marginLeft="8dp">
-        <Spinner android:id="@+id/change_counselor_bank_account_spinner" android:layout_width="wrap_content" android:layout_height="wrap_content" android:entries="@array/bank_array"/>
-        <EditText android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="2" android:hint="계좌번호 입력"/>
+        <TextView style="@style/Title" android:text="신한은행" android:textStyle="normal"/>
+        <TextView style="@style/Title" android:text="110-345-234521" android:textStyle="normal" android:paddingBottom="40dp"/>
 
+        <TextView style="@style/Title2" android:text="새로운 입금계좌" />
+        <View style="@style/Divider" android:layout_marginRight="8dp" android:layout_marginLeft="8dp"/>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginRight="8dp" android:layout_marginLeft="8dp" android:text="본인 명의의 계좌만 사용 가능합니다."/>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginRight="8dp" android:layout_marginLeft="8dp">
+            <Spinner android:id="@+id/change_counselor_bank_account_spinner" android:layout_width="wrap_content" android:layout_height="wrap_content" android:entries="@array/bank_array"/>
+            <EditText android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="2" android:hint="계좌번호 입력"/>
+
+        </LinearLayout>
     </LinearLayout>
 
     <Button android:layout_width="match_parent" android:layout_height="wrap_content" android:text="계좌변경" android:backgroundTint="@color/customLightGreen"/>

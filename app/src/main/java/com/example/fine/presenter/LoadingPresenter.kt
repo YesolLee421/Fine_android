@@ -1,4 +1,4 @@
 package com.example.fine.presenter
 
-interface LoadingPresenter {
+class LoadingPresenter {
 }

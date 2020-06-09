@@ -45,11 +45,15 @@
     <View style="@style/Divider" android:id="@+id/counselor_detail_divider1" android:layout_marginBottom="20dp"
           app:layout_constraintTop_toBottomOf="@+id/counselor_detail_tg_box" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"/>
 
-    <ScrollView android:id="@+id/counselor_detail_scroll" android:layout_width="match_parent" android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/counselor_detail_divider1" app:layout_constraintBottom_toTopOf="@+id/write_counsel_paper_btn_box"
-                app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
+    <ScrollView android:id="@+id/counselor_detail_scroll" android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/counselor_detail_divider1"
+                app:layout_constraintBottom_toTopOf="@+id/write_counsel_paper_btn_box"
+                app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0" app:layout_constraintVertical_bias="0.0">
 
-        <LinearLayout android:id="@+id/counselor_detail_about_box" android:layout_width="match_parent" android:layout_height="wrap_content"
+        <LinearLayout android:id="@+id/counselor_detail_about_box" android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
                       android:orientation="vertical" android:layout_margin="8dp" android:padding="8dp">
 
             <TextView style="@style/Title2" android:text="상담사님과의 심리상담 효과"/>
@@ -83,33 +87,65 @@
             <View style="@style/Divider" android:layout_marginTop="20dp" android:layout_marginBottom="20dp"/>
 
 
-
             <TextView style="@style/Title2" android:text="상담사님의 선호 일정"/>
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                       android:text="실제 상담 일정은 상담사님과 협의 후 진행됩니다."/>
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                       android:text="월, 수, 금 16~20시, 20~24시" android:textColor="@color/customDarkGreen"/>
 
-            <TableLayout android:id="@+id/counselor_detail_time_box" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:stretchColumns="0, 1, 2, 3, 4, 5, 6,7, 8">
+            <TableLayout android:id="@+id/counselor_detail_time_box" android:layout_width="match_parent"
+                         android:layout_height="wrap_content" android:orientation="vertical"
+                         android:stretchColumns="0, 1, 2, 3, 4, 5, 6,7, 8">
                 <TableRow></TableRow>
-                <TableRow android:background="@color/customLightGrey"><TextView android:text=""/>
-                    <TextView android:text="월"/><TextView android:text="화"/><TextView android:text="수"/><TextView android:text="목"/>
-                    <TextView android:text="금"/><TextView android:text="토"/><TextView android:text="일"/></TableRow>
-                <TableRow><TextView android:text="8~12" android:background="@color/customLightGrey"/>
-                    <TextView android:text="X"/><TextView android:text="X"/><TextView android:text="X"/><TextView android:text="X"/>
-                    <TextView android:text="X"/><TextView android:text="X"/><TextView android:text="X"/>
+                <TableRow android:background="@color/customLightGrey">
+                    <TextView android:text=""/>
+                    <TextView android:text="월"/>
+                    <TextView android:text="화"/>
+                    <TextView android:text="수"/>
+                    <TextView android:text="목"/>
+                    <TextView android:text="금"/>
+                    <TextView android:text="토"/>
+                    <TextView android:text="일"/>
                 </TableRow>
-                <TableRow><TextView android:text="12~16" android:background="@color/customLightGrey"/>
-                    <TextView android:text="X"/><TextView android:text="X"/><TextView android:text="X"/><TextView android:text="X"/>
-                    <TextView android:text="X"/><TextView android:text="X"/><TextView android:text="X"/>
+                <TableRow>
+                    <TextView android:text="8~12" android:background="@color/customLightGrey"/>
+                    <TextView android:text="X"/>
+                    <TextView android:text="X"/>
+                    <TextView android:text="X"/>
+                    <TextView android:text="X"/>
+                    <TextView android:text="X"/>
+                    <TextView android:text="X"/>
+                    <TextView android:text="X"/>
                 </TableRow>
-                <TableRow><TextView android:text="16~20" android:background="@color/customLightGrey"/>
-                    <TextView android:text="O" android:textColor="@color/customDarkGreen"/><TextView android:text="X"/><TextView android:text="O" android:textColor="@color/customDarkGreen"/><TextView android:text="X"/>
-                    <TextView android:text="O" android:textColor="@color/customDarkGreen"/><TextView android:text="X"/><TextView android:text="X"/>
+                <TableRow>
+                    <TextView android:text="12~16" android:background="@color/customLightGrey"/>
+                    <TextView android:text="X"/>
+                    <TextView android:text="X"/>
+                    <TextView android:text="X"/>
+                    <TextView android:text="X"/>
+                    <TextView android:text="X"/>
+                    <TextView android:text="X"/>
+                    <TextView android:text="X"/>
                 </TableRow>
-                <TableRow><TextView android:text="20~24" android:background="@color/customLightGrey"/>
-                    <TextView android:text="O" android:textColor="@color/customDarkGreen"/><TextView android:text="X"/><TextView android:text="O" android:textColor="@color/customDarkGreen"/><TextView android:text="X"/>
-                    <TextView android:text="O" android:textColor="@color/customDarkGreen"/><TextView android:text="X"/><TextView android:text="X"/>
+                <TableRow>
+                    <TextView android:text="16~20" android:background="@color/customLightGrey"/>
+                    <TextView android:text="O" android:textColor="@color/customDarkGreen"/>
+                    <TextView android:text="X"/>
+                    <TextView android:text="O" android:textColor="@color/customDarkGreen"/>
+                    <TextView android:text="X"/>
+                    <TextView android:text="O" android:textColor="@color/customDarkGreen"/>
+                    <TextView android:text="X"/>
+                    <TextView android:text="X"/>
+                </TableRow>
+                <TableRow>
+                    <TextView android:text="20~24" android:background="@color/customLightGrey"/>
+                    <TextView android:text="O" android:textColor="@color/customDarkGreen"/>
+                    <TextView android:text="X"/>
+                    <TextView android:text="O" android:textColor="@color/customDarkGreen"/>
+                    <TextView android:text="X"/>
+                    <TextView android:text="O" android:textColor="@color/customDarkGreen"/>
+                    <TextView android:text="X"/>
+                    <TextView android:text="X"/>
                 </TableRow>
             </TableLayout>
         </LinearLayout>
