@@ -2,14 +2,14 @@ package com.example.fine.network
 
 import com.example.fine.model.Login
 import com.example.fine.model.Register
-import com.example.fine.model.ServerData
+import com.example.fine.model.ServerData_counselor
+import com.example.fine.model.ServerData_counselors
 import com.google.gson.JsonObject
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Path
-import java.util.*
 
 interface ServiceAPI {
 
@@ -27,10 +27,10 @@ interface ServiceAPI {
 
     // 상담사 정보 가져오기
     @GET("/counselors/{user_uid}")
-    fun getCounselor(@Path("user_uid") user_uid: String): Call<JsonObject>
+    fun getCounselor(@Path("user_uid") user_uid: String): Call<ServerData_counselor>
 
     // 상담사 목록 불러오기
-    @GET("/counselors")
-    fun getCounselorsList(): Call<JsonObject>
+    @GET("/counselors/{sort}/{filter}")
+    fun getCounselorsList(@Path("sort") sort: Int, @Path("filter") filter: Int): Call<ServerData_counselors>
 
 }

@@ -1,25 +1,62 @@
 package com.example.fine.view.activity
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.fine.R
+import com.example.fine.adapter.SearchCounselorAdapter
+import com.example.fine.model.CounselorData
+import com.example.fine.presenter.SearchCounselorContract
+import com.example.fine.presenter.SearchCounselorPresenter
 import kotlinx.android.synthetic.main.activity_search_counselor.*
 
-class SearchCounselorActivity : BaseActivity() {
+class SearchCounselorActivity : BaseActivity(), SearchCounselorContract.View {
+    val TAG = "SearchCounselorActivity"
+
+    // 리사이클러뷰 관련 요소
+    // 리사이클러뷰
+    lateinit var mList: RecyclerView
+    // 레이아웃 매니저
+    lateinit var lm: LinearLayoutManager
+    // 어댑터
+    lateinit var mAdapter: SearchCounselorAdapter
+    // 리스트
+    var arrayList = ArrayList<CounselorData?>()
+
+
+    // LoginActivity와 함께 생성될 LoginPresenter를 지연 초기화
+    private lateinit var searchCounselorPresenter: SearchCounselorPresenter
+
     override fun initPresenter() {
+        searchCounselorPresenter = SearchCounselorPresenter()
+        searchCounselorPresenter.mContext = this
+        searchCounselorPresenter.mView = this
+    }
+
+    fun setRecyclerView(){
+        mList = findViewById(R.id.search_counselor_rv)
+
+        lm = LinearLayoutManager(this)
+        mList.layoutManager = lm
+
+        mAdapter = SearchCounselorAdapter(this, arrayList, searchCounselorPresenter)
+        mList.adapter = mAdapter
+//        mList.setHasFixedSize(true)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search_counselor)
 
-        search_counselor_card.setOnClickListener {
-            startActivity(Intent(this@SearchCounselorActivity, CounselorDetailActivity::class.java))
-        }
+        
+        // 리사이클러뷰에 요소 연결하고 정보 불러오기
+        setRecyclerView()
 
-        activity_search_counselor_ic_filter.setOnClickListener {
+
+        search_counselor_iv_ic_filter.setOnClickListener {
             startActivity(Intent(this@SearchCounselorActivity, CounselorFilterActivity::class.java))
         }
 
@@ -30,12 +67,13 @@ class SearchCounselorActivity : BaseActivity() {
                 }
                 R.id.get_counsel ->{
                     Toast.makeText(this, "상담하기",Toast.LENGTH_SHORT).show()
-                    startActivity(Intent(this@SearchCounselorActivity, CounselListActivity::class.java))
+                    searchCounselorPresenter.startCounselListActivity()
                 }
                 R.id.my_page ->{
                     Toast.makeText(this, "마이페이지", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this, MyPageActivity::class.java)
                     intent.putExtra("type",0)
+                    searchCounselorPresenter.startMypageActivity()
                     startActivity(intent)
                 }
                 R.id.my_page_counselor ->{
@@ -49,5 +87,12 @@ class SearchCounselorActivity : BaseActivity() {
         }
 
 
+    }
+
+    override fun onStart() {
+        super.onStart()
+        searchCounselorPresenter.clearItems(arrayList, mAdapter)
+        searchCounselorPresenter.loadItems(arrayList, mAdapter)
+        mAdapter.notifyDataSetChanged()
     }
 }

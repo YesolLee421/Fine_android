@@ -8,6 +8,15 @@ class Register(var email: String, var nickname: String, var password: String, va
 // 로그인 시 보낼 정보
 class Login(var email: String,  var password: String)
 
+class ServerData_user (
+    @SerializedName("success")
+    var success: Boolean = false,
+    @SerializedName("data")
+    var data: userData? = null,
+    @SerializedName("message")
+    var message: String? = ""
+)
+
 class userData(
     @SerializedName("user_uid")
     var user_uid: String = "",
