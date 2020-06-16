@@ -54,8 +54,8 @@ class SearchCounselorAdapter (
 
         fun bind(item: CounselorData?, context: Context){
             if(item!=null) {
-                counselor_name.text = item.name_formal + " 상담사"
-                counselor_description.text = item.description
+                counselor_name.text = item.name_formal!! + " 상담사"
+                counselor_description.text = item.description!!
                 val nf = NumberFormat.getCurrencyInstance(Locale.KOREA)
                 counselor_price.text = nf.format(item.price)
                 when {
@@ -83,7 +83,7 @@ class SearchCounselorAdapter (
                     }
                 }
                 counselor_picture.setImageResource(R.drawable.logo_fine)
-                Log.e("adapter", "counselor_picture = "+ item.picture)
+                Log.e("adapter", "counselor_picture = "+ item.picture!!)
 
 //                if(item.picture!=null){ // 추후 S3 업로드 하고 구현
 //                    Picasso.get().load("http://10.0.2.2:5000/uploads/" + item.picture.toString()).into(counselor_picture);
@@ -91,7 +91,7 @@ class SearchCounselorAdapter (
                 itemView.setOnClickListener{
                     Toast.makeText(context, counselor_name.text.toString(), Toast.LENGTH_SHORT ).show()
                     val intent = Intent(context, CounselorDetailActivity::class.java)
-                    intent.putExtra("user_uid", item.user_uid)
+                    intent.putExtra("counselor_uid", item.user_uid)
                     context.startActivity(intent)
                 }
             }

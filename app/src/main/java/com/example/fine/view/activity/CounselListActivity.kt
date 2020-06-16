@@ -34,13 +34,13 @@ class CounselListActivity : BaseActivity() {
                     intent.putExtra("type",0)
                     startActivity(intent)
                 }
-                R.id.my_page_counselor ->{
-                    Toast.makeText(this, "상담사 마이페이지", Toast.LENGTH_SHORT).show()
-
-                    val intent = Intent(this, MyPageCounselorActivity::class.java)
-                    intent.putExtra("type",1)
-                    startActivity(intent)
-                }
+//                R.id.my_page_counselor ->{
+//                    Toast.makeText(this, "상담사 마이페이지", Toast.LENGTH_SHORT).show()
+//
+//                    val intent = Intent(this, MyPageCounselorActivity::class.java)
+//                    intent.putExtra("type",1)
+//                    startActivity(intent)
+//                }
             }
         }
     }

@@ -19,12 +19,16 @@ class ServerData_user (
 
 class userData(
     @SerializedName("user_uid")
-    var user_uid: String = "",
+    var user_uid: String,
     @SerializedName("email")
-    var email: String = "",
+    var email: String,
+    @SerializedName("password")
+    var password: String,
     @SerializedName("nickname")
-    var nickname: String = "",
+    var nickname: String,
     @SerializedName("type")
-    var type: Int = 2
+    var type: Int, // 1 = 관리자, 2 = 전문상담사, 3 = 일반 사용자
+    @SerializedName("hasPaper")
+    var hasPaper: Boolean
 )
 

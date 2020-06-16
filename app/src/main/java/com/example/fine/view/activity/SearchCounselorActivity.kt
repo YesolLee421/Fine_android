@@ -51,10 +51,11 @@ class SearchCounselorActivity : BaseActivity(), SearchCounselorContract.View {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search_counselor)
 
-        
         // 리사이클러뷰에 요소 연결하고 정보 불러오기
         setRecyclerView()
 
+        // 유저 정보 받기
+        searchCounselorPresenter.getUser()
 
         search_counselor_iv_ic_filter.setOnClickListener {
             startActivity(Intent(this@SearchCounselorActivity, CounselorFilterActivity::class.java))
@@ -71,18 +72,16 @@ class SearchCounselorActivity : BaseActivity(), SearchCounselorContract.View {
                 }
                 R.id.my_page ->{
                     Toast.makeText(this, "마이페이지", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this, MyPageActivity::class.java)
-                    intent.putExtra("type",0)
                     searchCounselorPresenter.startMypageActivity()
-                    startActivity(intent)
-                }
-                R.id.my_page_counselor ->{
-                    Toast.makeText(this, "상담사 마이페이지", Toast.LENGTH_SHORT).show()
 
-                    val intent = Intent(this, MyPageCounselorActivity::class.java)
-                    intent.putExtra("type",1)
-                    startActivity(intent)
                 }
+//                R.id.my_page_counselor ->{
+//                    Toast.makeText(this, "상담사 마이페이지", Toast.LENGTH_SHORT).show()
+//
+//                    val intent = Intent(this, MyPageCounselorActivity::class.java)
+//                    intent.putExtra("type",1)
+//                    startActivity(intent)
+//                }
             }
         }
 

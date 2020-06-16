@@ -19,14 +19,15 @@ class CounselorDetailPresenter: CounselorDetailContract.Presenter {
     val TAG = "CounselorDetailPresenter"
     override lateinit var mView: CounselorDetailContract.View
     override lateinit var mContext: Context
+    lateinit var counselorData: CounselorData
 
 
-    override fun loadData(user_uid: String) : CounselorData?{
+    override fun loadData(user_uid: String){
         // 서버로 상담사 정보 요청 보내기
-        val client: OkHttpClient = RetrofitClient.getClient()
+        val client: OkHttpClient = RetrofitClient.getClient(mContext, "addCookie")
         val apiService = RetrofitClient.serviceAPI(client)
         val getCounselor_request : Call<ServerData_counselor> = apiService.getCounselor(user_uid)
-        var counselorData: CounselorData? = null
+
         getCounselor_request.enqueue(object : Callback<ServerData_counselor>{
             override fun onFailure(call: Call<ServerData_counselor>, t: Throwable) {
                 executionLog(TAG, "getCounselor_request 실패")
@@ -36,15 +37,14 @@ class CounselorDetailPresenter: CounselorDetailContract.Presenter {
                 if(response.isSuccessful){
                     val data: ServerData_counselor = response.body()!!
                     if(data.data!=null){
-                        counselorData= data.data
-
+                        counselorData= data.data!!
+                        mView.showInfo(counselorData)
                     }
                     executionLog(TAG, data.message!!)
                     showMessage(data.message!!)
                 }
             }
         })
-        return counselorData
     }
 
     fun setCount(count: Int) : String {
@@ -77,7 +77,12 @@ class CounselorDetailPresenter: CounselorDetailContract.Presenter {
     override fun startRequestCounselActivity() {
         showMessage("상담신청으로 이동")
         executionLog(TAG, "상담신청으로 이동")
-        mContext.startActivity(Intent(mContext, RequestCounselingActivity::class.java))
+        val intent: Intent = Intent(mContext, RequestCounselingActivity::class.java)
+        intent.putExtra("counselor_uid", counselorData.user_uid)
+        intent.putExtra("price", counselorData.price )
+        intent.putExtra("discount_4w", counselorData.discount_4w)
+        intent.putExtra("discount_10w", counselorData.discount_10w)
+        mContext.startActivity(intent)
         (mContext as Activity).finish()
     }
 }

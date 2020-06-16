@@ -8,6 +8,8 @@ interface SearchCounselorContract {
     interface View: BaseView {}
     interface Presenter: BasePresenter<View>{
 
+        fun getUser()
+
         fun startMypageActivity()
 
         fun startCounselListActivity()

@@ -24,41 +24,41 @@ data class ServerData_counselor (
 
 class CounselorData (
     @SerializedName("user_uid")
-    var user_uid: String = "",
+    var user_uid: String,
     @SerializedName("name_formal")
-    var name_formal: String = "",
+    var name_formal: String?,
     @SerializedName("gender")
-    var gender: Int = 0,
+    var gender: Int?,
     @SerializedName("description")
-    var description: String? = "",
+    var description: String?,
     @SerializedName("picture")
-    var picture: String? = "",
+    var picture: String?,
     @SerializedName("isVerified")
-    var isVerified: Boolean = false,
+    var isVerified: Boolean,
     @SerializedName("intro_1")
-    var intro_1: String = "",
+    var intro_1: String?,
     @SerializedName("intro_2")
-    var intro_2: String = "",
+    var intro_2: String?,
     @SerializedName("intro_3")
-    var intro_3: String = "",
+    var intro_3: String?,
     @SerializedName("certificate")
-    var certificate: String = "",
+    var certificate: String?,
     @SerializedName("career")
-    var career: String = "",
+    var career: String?,
     @SerializedName("education")
-    var education: String = "",
+    var education: String?,
     @SerializedName("time_prefered")
-    var time_prefered: String = "",
+    var time_prefered: String?,
     @SerializedName("price")
-    var price: Int = 0,
+    var price: Int,
     @SerializedName("discount_4w")
-    var discount_4w: Int = 0,
+    var discount_4w: Int,
     @SerializedName("discount_10w")
-    var discount_10w: Int = 0,
+    var discount_10w: Int,
     @SerializedName("bank_account")
-    var bank_account: String = "",
+    var bank_account: String?,
     @SerializedName("count")
-    var count: Int = 0,
+    var count: Int,
     @SerializedName("createdAt")
     var createdAt: Date,
     @SerializedName("updatedAt")

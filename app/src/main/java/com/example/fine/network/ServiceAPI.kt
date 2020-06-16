@@ -1,9 +1,6 @@
 package com.example.fine.network
 
-import com.example.fine.model.Login
-import com.example.fine.model.Register
-import com.example.fine.model.ServerData_counselor
-import com.example.fine.model.ServerData_counselors
+import com.example.fine.model.*
 import com.google.gson.JsonObject
 import retrofit2.Call
 import retrofit2.http.Body
@@ -32,5 +29,9 @@ interface ServiceAPI {
     // 상담사 목록 불러오기
     @GET("/counselors/{sort}/{filter}")
     fun getCounselorsList(@Path("sort") sort: Int, @Path("filter") filter: Int): Call<ServerData_counselors>
+
+    // 마이페이지 정보 불러오기
+    @GET("/mypage")
+    fun getMyPage() : Call<ServerData_mypage>
 
 }
