@@ -8,6 +8,7 @@ import android.widget.Toast
 interface BasePresenter <T>{
     var mView: T
     var mContext: Context
+    val TAG: String
 
     // showMessage : 공통으로 사용하는 messsage 출력 부분을 생성하는 함수
     fun showMessage(msg : String?) {

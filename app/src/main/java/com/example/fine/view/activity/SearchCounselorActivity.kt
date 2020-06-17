@@ -14,7 +14,7 @@ import com.example.fine.presenter.SearchCounselorPresenter
 import kotlinx.android.synthetic.main.activity_search_counselor.*
 
 class SearchCounselorActivity : BaseActivity(), SearchCounselorContract.View {
-    val TAG = "SearchCounselorActivity"
+    override val TAG = "SearchCounselorActivity"
 
     // 리사이클러뷰 관련 요소
     // 리사이클러뷰

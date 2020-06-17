@@ -11,7 +11,7 @@ import com.example.fine.presenter.RegisterContract
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : BaseActivity(), LoginContract.View {
-    val TAG = "LoginActivity"
+    override val TAG = "LoginActivity"
 
     // LoginActivity와 함께 생성될 LoginPresenter를 지연 초기화
     private lateinit var loginPresenter: LoginPresenter

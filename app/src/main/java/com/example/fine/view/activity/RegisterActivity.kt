@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.activity_register.*
 import kotlin.properties.Delegates
 
 class RegisterActivity : BaseActivity(), RegisterContract.View {
-    val TAG = "RegisterActivity"
+    override val TAG = "RegisterActivity"
 
     // LoginActivity와 함께 생성될 LoginPresenter를 지연 초기화
     private lateinit var registerPresenter: RegisterPresenter

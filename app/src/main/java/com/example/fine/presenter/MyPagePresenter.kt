@@ -13,9 +13,10 @@ import retrofit2.Response
 
 class MyPagePresenter(): MyPageContract.Presenter {
 
-    val TAG = "MyPagePresenter"
+    override val TAG = "MyPagePresenter"
     override lateinit var mView: MyPageContract.View
     override lateinit var mContext: Context
+    lateinit var mypage: MyPageData
 
 
     override fun loadData() {
@@ -33,8 +34,9 @@ class MyPagePresenter(): MyPageContract.Presenter {
                     val data: ServerData_mypage = response.body()!!
                     if(data.data!=null){
                         executionLog(TAG, "getMyPage_request 성공")
-                        val mypage = data.data
-                        mView.showInfo(mypage?.user!!)
+                        val mypage_data = data.data
+                        mypage = mypage_data!!
+                        mView.showInfo(mypage.user!!)
                     }
                 }
             }
@@ -45,15 +47,16 @@ class MyPagePresenter(): MyPageContract.Presenter {
         // 여기는 startActivityOnResult()로 구현하는 것이 나을듯
         showMessage("닉네임변경으로 이동")
         executionLog(TAG, "닉네임변경으로 이동")
-//        val intent: Intent = Intent(mContext, ChangeNickNameActivity::class.java)
-//
-//        mContext.startActivity(intent)
+        val intent: Intent = Intent(mContext, ChangeNickNameActivity::class.java)
+        intent.putExtra("nickname", mypage.user?.nickname)
+        mContext.startActivity(intent)
     }
 
     override fun startChangePasswordActivity() {
         // 여기는 startActivityOnResult()로 구현하는 것이 나을듯
         showMessage("비밀번호 변경으로 이동")
         executionLog(TAG, "비밀번호 변경으로 이동")
+        mContext.startActivity(Intent(mContext, ChangePasswordActivity::class.java))
     }
 
     override fun startCheckPaperActivity() {
@@ -71,8 +74,8 @@ class MyPagePresenter(): MyPageContract.Presenter {
     }
 
     override fun startCounselListActivity() {
-        showMessage("상담접수지로 이동")
-        executionLog(TAG, "상담접수지로 이동")
+        showMessage("상담 목록으로 이동")
+        executionLog(TAG, "상담 목록으로 이동")
         val intent: Intent = Intent(mContext, CounselListActivity::class.java)
         mContext.startActivity(intent)
     }

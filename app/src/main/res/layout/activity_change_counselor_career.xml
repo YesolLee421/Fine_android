@@ -20,15 +20,15 @@
 
 
             <TextView style="@style/Title2" android:text="1) 자격사항"/>
-            <EditText android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="내용을 입력해주세요."
+            <EditText android:id="@+id/change_counselor_experience_et_certificate" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="내용을 입력해주세요."
                       android:inputType="textMultiLine" android:layout_marginLeft="16dp" android:layout_marginRight="16dp" android:layout_marginBottom="20dp"/>
 
             <TextView style="@style/Title2" android:text="2) 경력"/>
-            <EditText android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="내용을 입력해주세요."
+            <EditText android:id="@+id/change_counselor_experience_et_career" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="내용을 입력해주세요."
                       android:inputType="textMultiLine" android:layout_marginLeft="16dp" android:layout_marginRight="16dp" android:layout_marginBottom="20dp"/>
 
             <TextView style="@style/Title2" android:text="3) 학력"/>
-            <EditText android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="내용을 입력해주세요."
+            <EditText android:id="@+id/change_counselor_experience_et_education" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="내용을 입력해주세요."
                       android:inputType="textMultiLine" android:layout_marginLeft="16dp" android:layout_marginRight="16dp" />
 
         </LinearLayout>
@@ -37,7 +37,7 @@
 
 
 
-    <Button android:layout_width="match_parent" android:layout_height="wrap_content" android:text="확인" android:backgroundTint="@color/customLightGreen"
+    <Button android:id="@+id/change_counselor_experience_btn_save" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="확인" android:backgroundTint="@color/customLightGreen"
 
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"

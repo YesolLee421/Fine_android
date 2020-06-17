@@ -21,6 +21,7 @@ import java.text.NumberFormat
 import java.util.*
 
 class CounselorDetailActivity : BaseActivity(), CounselorDetailContract.View {
+    override val TAG: String = "CounselorDetailActivity"
 
     override fun initPresenter() {
         counselorDetailPresenter = CounselorDetailPresenter()
@@ -34,9 +35,6 @@ class CounselorDetailActivity : BaseActivity(), CounselorDetailContract.View {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_counselor_detail)
 
-        // presenter에서 데이터 가져와서 view에 보여주기
-        counselorDetailPresenter.loadData(intent.getStringExtra("counselor_uid")!!)
-
         // 누르면 해당 위치로 가기
         counselor_detail_tb_about.setOnClickListener {  }
         counselor_detail_tb_career.setOnClickListener {  }
@@ -46,6 +44,12 @@ class CounselorDetailActivity : BaseActivity(), CounselorDetailContract.View {
         counselor_detail_btn.setOnClickListener {
             counselorDetailPresenter.startRequestCounselActivity()
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        // presenter에서 데이터 가져와서 view에 보여주기
+        counselorDetailPresenter.loadData(intent.getStringExtra("counselor_uid")!!)
     }
 
     // 데이터 클래스 객체 받아서 view 요소에 보여주기
@@ -58,14 +62,14 @@ class CounselorDetailActivity : BaseActivity(), CounselorDetailContract.View {
         setCount(counselor.count)
 
         // 상담사 소개 질문 3개
-        counselor_detail_tv_intro_1.text = counselor.intro_1!!
-        counselor_detail_tv_intro_2.text = counselor.intro_2!!
-        counselor_detail_tv_intro_3.text = counselor.intro_3!!
+        counselor_detail_tv_intro_1.text = counselor.intro_1
+        counselor_detail_tv_intro_2.text = counselor.intro_2
+        counselor_detail_tv_intro_3.text = counselor.intro_3
 
         // 상담사 약력 3개
-        counselor_detail_tv_certificate.text = counselor.certificate!!
-        counselor_detail_tv_career.text = counselor.career!!
-        counselor_detail_tv_education.text = counselor.education!!
+        counselor_detail_tv_certificate.text = counselor.certificate
+        counselor_detail_tv_career.text = counselor.career
+        counselor_detail_tv_education.text = counselor.education
 
         // 선호 일정
         //setTimePrefered(counselor.time_prefered)

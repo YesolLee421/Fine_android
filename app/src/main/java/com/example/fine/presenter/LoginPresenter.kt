@@ -17,7 +17,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class LoginPresenter() : LoginContract.Presenter{
-    val TAG = "LoginPresenter"
+    override val TAG = "LoginPresenter"
     override lateinit var mView: LoginContract.View
     override lateinit var mContext: Context
     internal var preferences: SharedPreferences? = null

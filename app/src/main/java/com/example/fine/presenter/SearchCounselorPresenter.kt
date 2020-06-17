@@ -19,7 +19,7 @@ import retrofit2.Response
 
 class SearchCounselorPresenter() : SearchCounselorContract.Presenter {
 
-    val TAG = "SearchCounselorPresenter"
+    override val TAG = "SearchCounselorPresenter"
     override lateinit var mView: SearchCounselorContract.View
     override lateinit var mContext: Context
     lateinit var preferences: SharedPreferences
@@ -48,7 +48,6 @@ class SearchCounselorPresenter() : SearchCounselorContract.Presenter {
                     executionLog(TAG, data.toString())
                     if(data.success){
                         for(element in data.data!!){
-                            executionLog(TAG, element.name_formal!!)
                             adapter.addItem(element)
                         }
                     }

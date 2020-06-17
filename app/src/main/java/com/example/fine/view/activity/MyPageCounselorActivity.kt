@@ -19,7 +19,7 @@ class MyPageCounselorActivity : BaseActivity(), MyPageCounselorContract.View{
 
     // CounselorDetailPresenter를 지연 초기화
     private lateinit var myPageCounselorPresenter : MyPageCounselorPresenter
-    val TAG = "MyPageCounselorActivity"
+    override val TAG = "MyPageCounselorActivity"
 
     fun setPrice(counselor: CounselorData) {
         val str = StringBuilder()
@@ -66,8 +66,8 @@ class MyPageCounselorActivity : BaseActivity(), MyPageCounselorContract.View{
             my_page_counselor_tv_time.text = "미등록"
             my_page_counselor_tv_time.setTextColor(ContextCompat.getColor(this, R.color.customRed))
         } else {
-            my_page_counselor_tv_bank_account.text = counselor.time_prefered
-            my_page_counselor_tv_bank_account.setTextColor(ContextCompat.getColor(this, R.color.customDarkGreen))
+            my_page_counselor_tv_time.text = counselor.time_prefered
+            my_page_counselor_tv_time.setTextColor(ContextCompat.getColor(this, R.color.customDarkGreen))
         }
     }
 
@@ -81,7 +81,7 @@ class MyPageCounselorActivity : BaseActivity(), MyPageCounselorContract.View{
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_page_counselor)
 
-        myPageCounselorPresenter.loadData()
+
 
         my_page_counselor_profile.setOnClickListener {
             myPageCounselorPresenter.startChangeProfileActivity()
@@ -111,5 +111,10 @@ class MyPageCounselorActivity : BaseActivity(), MyPageCounselorContract.View{
             myPageCounselorPresenter.startSettingsActivity()
         }
 
+    }
+
+    override fun onStart() {
+        super.onStart()
+        myPageCounselorPresenter.loadData()
     }
 }

@@ -20,15 +20,15 @@
         <LinearLayout android:id="@+id/write_counsel_paper_linear" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_margin="8dp">
 
             <TextView style="@style/Title2" android:text="1) 상담사님과의 심리상담 효과"/>
-            <EditText android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="내용을 입력해주세요."
+            <EditText android:id="@+id/change_counselor_intro_et_intro_1" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="내용을 입력해주세요."
                       android:inputType="textMultiLine" android:layout_marginLeft="16dp" android:layout_marginRight="16dp" android:layout_marginBottom="20dp"/>
 
             <TextView style="@style/Title2" android:text="2) 상담을 망설이시는 분에게 하고 싶은 말"/>
-            <EditText android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="내용을 입력해주세요."
+            <EditText android:id="@+id/change_counselor_intro_et_intro_2" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="내용을 입력해주세요."
                       android:inputType="textMultiLine" android:layout_marginLeft="16dp" android:layout_marginRight="16dp" android:layout_marginBottom="20dp"/>
 
             <TextView style="@style/Title2" android:text="3) 상담사님의 상담 방식"/>
-            <EditText android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="내용을 입력해주세요."
+            <EditText android:id="@+id/change_counselor_intro_et_intro_3" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="내용을 입력해주세요."
                       android:inputType="textMultiLine" android:layout_marginLeft="16dp" android:layout_marginRight="16dp" />
 
         </LinearLayout>
@@ -37,8 +37,8 @@
 
 
 
-    <Button android:layout_width="match_parent" android:layout_height="wrap_content" android:text="확인" android:backgroundTint="@color/customLightGreen"
-
+    <Button android:id="@+id/change_counselor_intro_btn_save" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="확인" android:backgroundTint="@color/customLightGreen"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
     />

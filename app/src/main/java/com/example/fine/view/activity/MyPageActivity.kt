@@ -13,6 +13,7 @@ import com.example.fine.presenter.MyPagePresenter
 import kotlinx.android.synthetic.main.activity_my_page.*
 
 class MyPageActivity : BaseActivity() , MyPageContract.View{
+    override val TAG: String = "MyPageActivity"
 
     // CounselorDetailPresenter를 지연 초기화
     private lateinit var myPagePresenter : MyPagePresenter
@@ -41,7 +42,6 @@ class MyPageActivity : BaseActivity() , MyPageContract.View{
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_page)
 
-        myPagePresenter.loadData()
 
         my_page_nick_name.setOnClickListener {
             myPagePresenter.startChangeNickNameActivity()
@@ -62,5 +62,10 @@ class MyPageActivity : BaseActivity() , MyPageContract.View{
             myPagePresenter.startSettingsActivity()
         }
 
+    }
+
+    override fun onStart() {
+        super.onStart()
+        myPagePresenter.loadData()
     }
 }

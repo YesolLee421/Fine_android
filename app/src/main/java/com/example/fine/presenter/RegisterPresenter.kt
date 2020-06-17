@@ -44,7 +44,7 @@ class RegisterPresenter() : RegisterContract.Presenter {
         })
     }
 
-    val TAG = "RegisterPresenter"
+    override val TAG = "RegisterPresenter"
 
     override lateinit var mView: RegisterContract.View
     override lateinit var mContext: Context

@@ -83,7 +83,7 @@ class SearchCounselorAdapter (
                     }
                 }
                 counselor_picture.setImageResource(R.drawable.logo_fine)
-                Log.e("adapter", "counselor_picture = "+ item.picture!!)
+//                Log.e("adapter", "counselor_picture = "+ item.picture!!)
 
 //                if(item.picture!=null){ // 추후 S3 업로드 하고 구현
 //                    Picasso.get().load("http://10.0.2.2:5000/uploads/" + item.picture.toString()).into(counselor_picture);

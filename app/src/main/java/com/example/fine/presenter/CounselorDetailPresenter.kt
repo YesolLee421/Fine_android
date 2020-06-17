@@ -16,7 +16,7 @@ import retrofit2.Response
 
 class CounselorDetailPresenter: CounselorDetailContract.Presenter {
 
-    val TAG = "CounselorDetailPresenter"
+    override val TAG = "CounselorDetailPresenter"
     override lateinit var mView: CounselorDetailContract.View
     override lateinit var mContext: Context
     lateinit var counselorData: CounselorData
