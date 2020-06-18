@@ -17,19 +17,19 @@
         <TextView style="@style/Title2" android:text="현재 입금계좌" />
         <View style="@style/Divider" android:layout_marginRight="8dp" android:layout_marginLeft="8dp"/>
 
-        <TextView style="@style/Title" android:text="신한은행" android:textStyle="normal"/>
-        <TextView style="@style/Title" android:text="110-345-234521" android:textStyle="normal" android:paddingBottom="40dp"/>
+        <TextView android:id="@+id/change_bank_account_tv_bank_name" style="@style/Title" android:textStyle="normal"/>
+        <TextView android:id="@+id/change_bank_account_tv_account_number" style="@style/Title" android:textStyle="normal" android:paddingBottom="40dp"/>
 
         <TextView style="@style/Title2" android:text="새로운 입금계좌" />
         <View style="@style/Divider" android:layout_marginRight="8dp" android:layout_marginLeft="8dp"/>
         <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginRight="8dp" android:layout_marginLeft="8dp" android:text="본인 명의의 계좌만 사용 가능합니다."/>
         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginRight="8dp" android:layout_marginLeft="8dp">
-            <Spinner android:id="@+id/change_counselor_bank_account_spinner" android:layout_width="wrap_content" android:layout_height="wrap_content" android:entries="@array/bank_array"/>
-            <EditText android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="2" android:hint="계좌번호 입력"/>
+            <Spinner android:id="@+id/change_counselor_bank_account_spinner_bank_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:entries="@array/bank_array"/>
+            <EditText android:id="@+id/change_bank_account_et_account_number" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="2" android:hint="계좌번호 입력"/>
 
         </LinearLayout>
     </LinearLayout>
 
-    <Button android:layout_width="match_parent" android:layout_height="wrap_content" android:text="계좌변경" android:backgroundTint="@color/customLightGreen"/>
+    <Button android:id="@+id/change_bank_account_btn_save" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="계좌변경" android:backgroundTint="@color/customLightGreen"/>
 
 </LinearLayout>

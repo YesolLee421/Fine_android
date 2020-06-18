@@ -2,6 +2,7 @@ package com.example.fine.network
 
 import com.example.fine.model.*
 import com.google.gson.JsonObject
+import okhttp3.MultipartBody
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -45,7 +46,12 @@ interface ServiceAPI {
     // 프로필 변경
     @Multipart
     @PATCH("/mypage/counselor/profile")
-    fun changeProfile() : Call<ServerData_mypage>
+    fun changeProfile(
+        @Part("name_formal") name_formal: String,
+        @Part("description") description: String?,
+        @Part("gender") gender: Int,
+        @Part picture: MultipartBody.Part?
+    ) : Call<ServerData_mypage>
 
     // 상담사 소개 변경
     @PATCH("/mypage/counselor/intro")

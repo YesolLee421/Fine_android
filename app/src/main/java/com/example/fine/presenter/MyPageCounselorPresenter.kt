@@ -8,6 +8,7 @@ import com.example.fine.model.ServerData_mypage
 import com.example.fine.network.RetrofitClient
 import com.example.fine.view.activity.*
 import okhttp3.OkHttpClient
+import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -32,7 +33,7 @@ class MyPageCounselorPresenter() : MyPageCounselorContract.Presenter {
                     if(data.data!=null){
                         executionLog(TAG, "getMyPageCounselor_request 성공")
                         val mypage_data = data.data
-                        mypage = mypage_data!!
+                        mypage = MyPageData(mypage_data?.user, mypage_data?.counselor)
                         mView.showInfo(mypage.user!!, mypage.counselor!!)
                     }
                 }
@@ -82,6 +83,7 @@ class MyPageCounselorPresenter() : MyPageCounselorContract.Presenter {
         showMessage("선호시간 변경으로 이동")
         executionLog(TAG, "선호시간 변경으로 이동")
         val intent = Intent(mContext, ChangeCounselorTimePreferedActivity::class.java)
+        intent.putExtra("time_prefered", mypage.counselor?.time_prefered)
         mContext.startActivity(intent)
     }
 
@@ -99,7 +101,14 @@ class MyPageCounselorPresenter() : MyPageCounselorContract.Presenter {
         showMessage("계좌번호 변경으로 이동")
         executionLog(TAG, "계좌번호 변경으로 이동")
         val intent = Intent(mContext, ChangeCounselorBankAccountActivity::class.java)
-        mContext.startActivity(intent)    }
+        val counselor = mypage.counselor
+        if(counselor?.bank_account!=null){
+            val jsonObject = JSONObject(counselor.bank_account!!)
+            intent.putExtra("bank_name", jsonObject.getString("bank_name"))
+            intent.putExtra("account_number", jsonObject.getString("account_number"))
+        }
+        mContext.startActivity(intent)
+    }
 
     override fun startCheckPaperActivity() {
         showMessage("상담접수지로 이동")

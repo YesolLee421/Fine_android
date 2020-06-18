@@ -35,11 +35,10 @@
 
 
             <TextView style="@style/Title2" android:text="2) 선호하는 시간대" android:paddingTop="16dp"/>
-            <CheckBox android:id="@+id/activity_change_counselor_time_prefered_cb0" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_marginRight="8dp" android:text="8~12시"/>
-            <CheckBox android:id="@+id/activity_change_counselor_time_prefered_cb1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_marginRight="8dp" android:text="12~16시"/>
-            <CheckBox android:id="@+id/activity_change_counselor_time_prefered_cb2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_marginRight="8dp" android:text="16~20시"/>
-            <CheckBox android:id="@+id/activity_change_counselor_time_prefered_cb3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_marginRight="8dp" android:text="20~24시"/>
-
+            <CheckBox android:id="@+id/activity_change_counselor_time_prefered_cb1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_marginRight="8dp" android:text="8~12시"/>
+            <CheckBox android:id="@+id/activity_change_counselor_time_prefered_cb2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_marginRight="8dp" android:text="12~16시"/>
+            <CheckBox android:id="@+id/activity_change_counselor_time_prefered_cb3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_marginRight="8dp" android:text="16~20시"/>
+            <CheckBox android:id="@+id/activity_change_counselor_time_prefered_cb4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_marginRight="8dp" android:text="20~24시"/>
 
         </LinearLayout>
 
@@ -47,7 +46,7 @@
 
 
 
-    <Button android:layout_width="match_parent" android:layout_height="wrap_content" android:text="확인" android:backgroundTint="@color/customLightGreen"
+    <Button android:id="@+id/change_counselor_time_prefered_btn_save" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="확인" android:backgroundTint="@color/customLightGreen"
 
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"

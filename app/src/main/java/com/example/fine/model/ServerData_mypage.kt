@@ -2,6 +2,7 @@ package com.example.fine.model
 
 import com.google.gson.JsonArray
 import com.google.gson.annotations.SerializedName
+import org.json.JSONArray
 
 class ServerData_mypage (
     @SerializedName("success")
@@ -17,6 +18,12 @@ class MyPageData (
     var user: userData? = null,
     @SerializedName("counselor")
     var counselor: CounselorData? = null
+)
+
+class ChangeProfile(
+    var name_formal: String,
+    var description: String?,
+    var gender: Int
 )
 
 class ChangeNickName(var nickname: String)
@@ -44,9 +51,13 @@ class ChangeExperience(
 
 // 상담사 선호시간 변경 시 보낼 정보
 class ChangeTimePrefered(
-    var day: JsonArray?,
-    var time: JsonArray?
+    var day: JSONArray?,
+    var time: JSONArray?
 )
+//class ChangeTimePrefered(
+//    var day: String,
+//    var time: String
+//)
 
 // 상담 가격 변경 시 보낼 정보
 class ChangePrice(
