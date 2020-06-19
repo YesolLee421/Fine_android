@@ -72,43 +72,54 @@ class CounselorDetailActivity : BaseActivity(), CounselorDetailContract.View {
         counselor_detail_tv_education.text = counselor.education
 
         // 선호 일정
-        //setTimePrefered(counselor.time_prefered)
+        setTimePrefered(counselor.time_prefered)
 
         // 가격
         val nf = NumberFormat.getCurrencyInstance(Locale.KOREA)
         counselor_detail_tv_price.text= nf.format(counselor.price)
     }
 
-    fun setTimePrefered(time: String){
-        val jsonData = JSONObject(Gson().toJson(time))
-        val dayArray : JSONArray = jsonData.getJSONArray("day")
-        val timeArray : JSONArray = jsonData.getJSONArray("time")
-        val data = StringBuilder()
-        for(i in 0 until dayArray.length()-1){
-            val jsonObject: JSONObject = dayArray.getJSONObject(i)
-            data.append(setDay(jsonObject.getString("day")))
-            if(i!=dayArray.length()-1){
-                data.append(", ")
+    fun setTimePrefered(time_prefered: String?){
+        if(time_prefered!=null){
+            val jsonData = JSONObject(time_prefered)
+            val dayArray = JSONArray(jsonData.get("day").toString())
+            val timeArray = JSONArray(jsonData.get("time").toString())
+            val data = StringBuilder()
+            if(dayArray.length()!=0){
+                for(i in 0 until dayArray.length()){
+                    val str_day: String = dayArray[i].toString()
+                    data.append(setDay(str_day))
+                    if(i!=dayArray.length()-1){
+                        data.append(", ")
+                    }
+                }
+            } else {
+                data.append("요일 선택 안함")
             }
-        }
-        data.append(" / ")
-        for(i in 0 until timeArray.length()-1){
-            val jsonObject: JSONObject = timeArray.getJSONObject(i)
-            data.append(setTime(jsonObject.getInt("time")))
-            if(i!=dayArray.length()-1){
-                data.append(", ")
+            data.append(" / ")
+            if(timeArray.length()!=0){
+                for(i in 0 until timeArray.length()){
+                    val str_time: String = timeArray[i].toString()
+                    data.append(setTime(str_time))
+                    if(i!=dayArray.length()-1){
+                        data.append(", ")
+                    }
+                }
+            } else {
+                data.append("시간대 선택 안함")
             }
+            counselor_detail_tv_time_prefered.text = data
         }
-        counselor_detail_tv_time_prefered.text = data
+
     }
 
-    fun setTime(time: Int): String {
+    fun setTime(time: String): String {
         when(time){
-            1-> return "8~12"
-            2-> return "12~16"
-            3-> return "16~20"
-            4-> return "20~24"
-            else -> return "선택 안함"
+            "1"-> return "8~12"
+            "2"-> return "12~16"
+            "3"-> return "16~20"
+            "4"-> return "20~24"
+            else -> return "시간대 선택 안함"
         }
     }
 
@@ -121,7 +132,7 @@ class CounselorDetailActivity : BaseActivity(), CounselorDetailContract.View {
             "fri"-> return "금"
             "sat"-> return "토"
             "sun"-> return "일"
-            else -> return "선택 안함"
+            else -> return "요일 선택 안함"
         }
     }
 

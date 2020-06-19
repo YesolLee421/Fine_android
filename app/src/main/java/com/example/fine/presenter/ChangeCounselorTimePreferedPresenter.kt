@@ -36,8 +36,8 @@ class ChangeCounselorTimePreferedPresenter : ChangeCounselorTimePreferedContract
                         if(counselor?.time_prefered!=null){
                             val jsonObject = JSONObject(counselor.time_prefered!!)
                             executionLog(TAG, "timePrefered_json = "+jsonObject)
-                            val day: JSONArray = JSONArray(jsonObject.get("day").toString())
-                            val time: JSONArray = JSONArray(jsonObject.get("time").toString())
+                            val day = JSONArray(jsonObject.get("day").toString())
+                            val time = JSONArray(jsonObject.get("time").toString())
                             mView.showInfo(day,time)
                         }
                     }

@@ -23,7 +23,6 @@
                       android:text="상담사가 선호하는 시간대를 최소 1개 이상 입력해주세요. 반드시 해당 시간에만 상담할 수 있는 것은 아니지만, 내담자들이 이 일정을 참고하여 상담을 신청하게 됩니다."/>
 
             <TextView style="@style/Title2" android:text="1) 선호하는 요일"/>
-            <CheckBox android:id="@+id/activity_change_counselor_day_prefered_cb0_all" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_marginRight="8dp" android:text="전체"/>
             <CheckBox android:id="@+id/activity_change_counselor_day_prefered_cb1_mon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_marginRight="8dp" android:text="월요일"/>
             <CheckBox android:id="@+id/activity_change_counselor_day_prefered_cb2_tue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_marginRight="8dp" android:text="화요일"/>
             <CheckBox android:id="@+id/activity_change_counselor_day_prefered_cb3_wed" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_marginRight="8dp" android:text="수요일"/>
@@ -41,7 +40,6 @@
             <CheckBox android:id="@+id/activity_change_counselor_time_prefered_cb4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_marginRight="8dp" android:text="20~24시"/>
 
         </LinearLayout>
-
     </ScrollView>
 
 

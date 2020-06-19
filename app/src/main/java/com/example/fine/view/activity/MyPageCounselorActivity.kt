@@ -11,6 +11,8 @@ import com.example.fine.model.CounselorData
 import com.example.fine.model.userData
 import com.example.fine.presenter.MyPageCounselorPresenter
 import kotlinx.android.synthetic.main.activity_my_page_counselor.*
+import org.json.JSONArray
+import org.json.JSONObject
 import java.lang.StringBuilder
 import java.text.NumberFormat
 import java.util.*
@@ -62,13 +64,15 @@ class MyPageCounselorActivity : BaseActivity(), MyPageCounselorContract.View{
 
         setPrice(counselor)
 
-        if(counselor.time_prefered==null){
-            my_page_counselor_tv_time.text = "미등록"
-            my_page_counselor_tv_time.setTextColor(ContextCompat.getColor(this, R.color.customRed))
-        } else {
-            my_page_counselor_tv_time.text = counselor.time_prefered
-            my_page_counselor_tv_time.setTextColor(ContextCompat.getColor(this, R.color.customDarkGreen))
-        }
+        setTimePrefered(counselor.time_prefered)
+
+//        if(counselor.time_prefered==null){
+//            my_page_counselor_tv_time.text = "미등록"
+//            my_page_counselor_tv_time.setTextColor(ContextCompat.getColor(this, R.color.customRed))
+//        } else {
+//            my_page_counselor_tv_time.text = counselor.time_prefered
+//            my_page_counselor_tv_time.setTextColor(ContextCompat.getColor(this, R.color.customDarkGreen))
+//        }
     }
 
     override fun initPresenter() {
@@ -80,8 +84,6 @@ class MyPageCounselorActivity : BaseActivity(), MyPageCounselorContract.View{
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_page_counselor)
-
-
 
         my_page_counselor_profile.setOnClickListener {
             myPageCounselorPresenter.startChangeProfileActivity()
@@ -110,7 +112,63 @@ class MyPageCounselorActivity : BaseActivity(), MyPageCounselorContract.View{
         my_page_counselor_setting.setOnClickListener {
             myPageCounselorPresenter.startSettingsActivity()
         }
+    }
 
+    fun setTimePrefered(time_prefered: String?){
+        if(time_prefered!=null){
+            val jsonData = JSONObject(time_prefered)
+            val dayArray = JSONArray(jsonData.get("day").toString())
+            val timeArray = JSONArray(jsonData.get("time").toString())
+            val data = StringBuilder()
+            if(dayArray.length()!=0){
+                for(i in 0 until dayArray.length()){
+                    val str_day: String = dayArray[i].toString()
+                    data.append(setDay(str_day))
+                    if(i!=dayArray.length()-1){
+                        data.append(", ")
+                    }
+                }
+            } else {
+                data.append("요일 선택 안함")
+            }
+            data.append(" / ")
+            if(timeArray.length()!=0){
+                for(i in 0 until timeArray.length()){
+                    val str_time: String = timeArray[i].toString()
+                    data.append(setTime(str_time))
+                    if(i!=dayArray.length()-1){
+                        data.append(", ")
+                    }
+                }
+            } else {
+                data.append("시간대 선택 안함")
+            }
+            my_page_counselor_tv_time.text = data
+            my_page_counselor_tv_time.setTextColor(ContextCompat.getColor(this, R.color.customDarkGreen))
+        }
+    }
+
+    fun setTime(time: String?): String {
+        when(time){
+            "1"-> return "8~12"
+            "2"-> return "12~16"
+            "3"-> return "16~20"
+            "4"-> return "20~24"
+            else -> return "시간대 선택 안함"
+        }
+    }
+
+    fun setDay(day: String?): String{
+        when(day){
+            "mon"-> return "월"
+            "tue"-> return "화"
+            "wed"-> return "수"
+            "thur"-> return "목"
+            "fri"-> return "금"
+            "sat"-> return "토"
+            "sun"-> return "일"
+            else -> return "요일 선택 안함"
+        }
     }
 
     override fun onStart() {

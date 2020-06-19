@@ -49,6 +49,8 @@ class MyPageCounselorPresenter() : MyPageCounselorContract.Presenter {
         intent.putExtra("description", mypage.counselor?.description)
         intent.putExtra("picture", mypage.counselor?.picture)
         intent.putExtra("gender", mypage.counselor?.gender)
+        intent.putExtra("count", mypage.counselor?.count)
+        intent.putExtra("isVerified", mypage.counselor?.isVerified)
         mContext.startActivity(intent)
     }
 

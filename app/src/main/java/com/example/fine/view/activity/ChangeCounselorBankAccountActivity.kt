@@ -36,7 +36,6 @@ class ChangeCounselorBankAccountActivity : BaseActivity(), ChangeCounselorBankAc
             }
             return
         }
-
         change_bank_account_tv_bank_name.text = "연결된 계좌 없음"
     }
 
@@ -45,6 +44,7 @@ class ChangeCounselorBankAccountActivity : BaseActivity(), ChangeCounselorBankAc
     var bank_name: String? = null
     var account_number: String? = null
     lateinit var spinner: Spinner
+
 
 
     override fun initPresenter() {

@@ -16,7 +16,7 @@ class ChangeCounselorTimePreferedActivity : BaseActivity() , ChangeCounselorTime
 
     fun showDay(day: JSONArray?){
         if(day!=null && day.length()!=0){
-            for(i in 0 until day.length()-1){
+            for(i in 0 until day.length()){
                 val str_day: String = day[i].toString()
                 when(str_day){
                     "mon"-> activity_change_counselor_day_prefered_cb1_mon.isChecked = true
@@ -36,7 +36,7 @@ class ChangeCounselorTimePreferedActivity : BaseActivity() , ChangeCounselorTime
 
     fun showTime(time: JSONArray?){
         if(time!=null && time.length()!=0){
-            for(i in 0 until time.length()-1){
+            for(i in 0 until time.length()){
                 val str_time: String = time[i].toString()
                 when(str_time){
                     "1"-> activity_change_counselor_time_prefered_cb1.isChecked = true
@@ -82,7 +82,7 @@ class ChangeCounselorTimePreferedActivity : BaseActivity() , ChangeCounselorTime
     }
 
     fun getDay(): JSONArray{
-        var arr = JSONArray()
+        val arr = JSONArray()
         if(activity_change_counselor_day_prefered_cb1_mon.isChecked) arr.put("mon")
         if(activity_change_counselor_day_prefered_cb2_tue.isChecked) arr.put("tue")
         if(activity_change_counselor_day_prefered_cb3_wed.isChecked) arr.put("wed")
@@ -95,7 +95,7 @@ class ChangeCounselorTimePreferedActivity : BaseActivity() , ChangeCounselorTime
     }
 
     fun getTime(): JSONArray{
-        var arr = JSONArray()
+        val arr = JSONArray()
         if(activity_change_counselor_time_prefered_cb1.isChecked) arr.put(1)
         if(activity_change_counselor_time_prefered_cb2.isChecked) arr.put(2)
         if(activity_change_counselor_time_prefered_cb3.isChecked) arr.put(3)

@@ -10,27 +10,55 @@
         android:paddingTop="8dp"
         android:paddingBottom="8dp"
         android:layout_gravity="center">
+    <TextView android:id="@+id/change_profile_tv_title" style="@style/Title" android:text="프로필 변경하기" app:layout_constraintTop_toTopOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"/>
+    <View android:id="@+id/change_profile_divider1" style="@style/Divider" app:layout_constraintTop_toBottomOf="@+id/change_profile_tv_title"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"/>
 
-    <LinearLayout android:id="@+id/write_counsel_paper_linear" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" app:layout_constraintTop_toTopOf="parent"
-                  app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" android:gravity="center_horizontal">
-        <TextView style="@style/Title" android:text="프로필 변경하기" />
-        <View style="@style/Divider"/>
+    <LinearLayout android:id="@+id/write_counsel_paper_linear" android:layout_width="match_parent"
+                  android:paddingLeft="16dp" android:paddingRight="16dp"
+                  android:layout_height="0dp" android:orientation="vertical" app:layout_constraintTop_toBottomOf="@+id/change_profile_divider1"
+                   app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintEnd_toEndOf="parent" android:gravity="center_horizontal"
+                  android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/change_profile_btn_save">
 
-        <TextView style="@style/Title" android:text="호머 심슨 상담사" android:gravity="center" />
-        <TextView android:layout_height="wrap_content" android:layout_width="match_parent" android:text="총 132회 상담" android:gravity="center" />
-        <TextView android:layout_height="wrap_content" android:layout_width="match_parent" android:text="전문 상담사 인증 완료" android:gravity="center" android:textColor="@color/customDarkGreen"/>
 
-        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/homer1"/>
-        <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="사진 변경" android:backgroundTint="@color/customLightGreen"/>
-        <TextView style="@style/Title2" android:text="한 줄 자기소개"  android:paddingLeft="16dp" android:paddingRight="16dp"/>
-        <EditText android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textMultiLine" android:layout_marginLeft="20dp" android:layout_marginRight="20dp" android:hint="내용을 입력하세요."/>
+        <TextView android:id="@+id/change_profile_tv_name_formal" style="@style/Title" android:text="호머 심슨 상담사"
+                  android:gravity="center"/>
+        <EditText android:id="@+id/change_profile_et_name_formal" android:layout_width="match_parent"
+                  android:layout_height="wrap_content"/>
+        <TextView android:id="@+id/change_profile_tv_count" android:layout_height="wrap_content"
+                  android:layout_width="match_parent" android:text="총 132회 상담" android:gravity="center"/>
+        <TextView android:id="@+id/change_profile_tv_isVerified" android:layout_height="wrap_content"
+                  android:layout_width="match_parent"  android:gravity="center"
+                  android:textColor="@color/customDarkGreen"/>
 
+        <ImageView android:id="@+id/change_profile_iv_picture" android:layout_width="wrap_content"
+                   android:layout_height="wrap_content" android:src="@drawable/homer1"/>
+        <Button android:id="@+id/change_profile_btn_change_picture" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:text="사진 변경"
+                android:backgroundTint="@color/customLightGreen"/>
+        <TextView style="@style/Title2" android:text="성별 선택"/>
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <Spinner android:id="@+id/change_profile_spinner_gender" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                     android:entries="@array/gender"/>
+            <TextView android:id="@+id/change_profile_tv_gender" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+
+        <TextView style="@style/Title2" android:text="한 줄 자기소개"/>
+        <EditText android:id="@+id/change_profile_et_description" android:layout_width="match_parent"
+                  android:layout_height="wrap_content" android:inputType="textMultiLine" android:maxLines="4"
+                  android:hint="내용을 입력하세요."/>
 
 
     </LinearLayout>
 
-    <Button android:layout_width="match_parent" android:layout_height="wrap_content" android:text="확인" android:backgroundTint="@color/customLightGreen"
+    <Button android:id="@+id/change_profile_btn_save" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="확인"
+            android:backgroundTint="@color/customLightGreen"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
