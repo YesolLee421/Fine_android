@@ -27,7 +27,7 @@ class SearchCounselorActivity : BaseActivity(), SearchCounselorContract.View {
     var arrayList = ArrayList<CounselorData?>()
 
 
-    // LoginActivity와 함께 생성될 LoginPresenter를 지연 초기화
+    // Activity와 함께 생성될 Presenter를 지연 초기화
     private lateinit var searchCounselorPresenter: SearchCounselorPresenter
 
     override fun initPresenter() {
@@ -73,7 +73,6 @@ class SearchCounselorActivity : BaseActivity(), SearchCounselorContract.View {
                 R.id.my_page ->{
                     Toast.makeText(this, "마이페이지", Toast.LENGTH_SHORT).show()
                     searchCounselorPresenter.startMypageActivity()
-
                 }
             }
         }

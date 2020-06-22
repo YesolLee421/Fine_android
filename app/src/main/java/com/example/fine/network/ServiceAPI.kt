@@ -3,6 +3,7 @@ package com.example.fine.network
 import com.example.fine.model.*
 import com.google.gson.JsonObject
 import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -47,8 +48,8 @@ interface ServiceAPI {
     @Multipart
     @PATCH("/mypage/counselor/profile")
     fun changeProfile(
-        @Part("name_formal") name_formal: String,
-        @Part("description") description: String?,
+        @Part("name_formal") name_formal: RequestBody,
+        @Part("description") description: RequestBody,
         @Part("gender") gender: Int,
         @Part picture: MultipartBody.Part?
     ) : Call<ServerData_mypage>
@@ -72,5 +73,23 @@ interface ServiceAPI {
     // 입금계좌 변경
     @PATCH("/mypage/counselor/bank_account")
     fun changeBankAccount(@Body changeBankAccount: ChangeBankAccount) :Call<ServerData_mypage>
+
+    // 상담 Case 관련
+    // 상담 목록 불러오기
+    @GET("/cases")
+    fun getCases() : Call<ServerData_cases>
+
+    // 개별 상담 케이스 불러오기
+    @GET("/cases/{case_id}")
+    fun getCase(@Path("case_id") case_id: Int): Call<ServerData_case>
+
+    // 상담케이스 생성
+    @POST("/cases")
+    fun createCase(@Body createCase: createCase): Call<ServerData_case>
+
+    // 상담 케이스 변경: 상담 접수지 제출
+    @PATCH("/cases/paper/{case_id}")
+    fun setPaper(@Path("case_id") case_id: Int): Call<ServerData_case>
+
 
 }

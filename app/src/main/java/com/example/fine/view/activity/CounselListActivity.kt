@@ -4,44 +4,77 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.fine.R
+import com.example.fine.adapter.CounselListAdapter
+import com.example.fine.model.Case
+import com.example.fine.presenter.CounselListContract
+import com.example.fine.presenter.CounselListPresenter
 import kotlinx.android.synthetic.main.activity_counsel_list.*
 
-class CounselListActivity : BaseActivity() {
+class CounselListActivity : BaseActivity(), CounselListContract.View {
+    override val TAG: String = "CounselListActivity"
+    // Activity와 함께 생성될 Presenter를 지연 초기화
+    private lateinit var counselListPresenter: CounselListPresenter
+
+    // 리사이클러뷰 관련 요소
+    // 리사이클러뷰
+    lateinit var mList: RecyclerView
+    // 레이아웃 매니저
+    lateinit var lm: LinearLayoutManager
+    // 어댑터
+    lateinit var mAdapter: CounselListAdapter
+    // 리스트
+    var arrayList = ArrayList<Case?>()
+
     override fun initPresenter() {
+        counselListPresenter = CounselListPresenter()
+        counselListPresenter.mContext = this
+        counselListPresenter.mView = this
+    }
+
+    fun setRecyclerView() {
+        mList = findViewById(R.id.counsel_list_rv)
+
+        lm = LinearLayoutManager(this)
+        mList.layoutManager = lm
+
+        mAdapter = CounselListAdapter(this, arrayList, counselListPresenter)
+        mList.adapter = mAdapter
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_counsel_list)
 
-        counsel_list_card.setOnClickListener {
-            startActivity(Intent(this@CounselListActivity, CaseDetailActivity::class.java))
-        }
+        // 리사이클러뷰에 요소 연결하고 정보 불러오기
+        setRecyclerView()
+
+        // 유저 정보 받기
+        counselListPresenter.getUser()
 
         counsel_list_bot_nav.setOnNavigationItemReselectedListener {
             when(it.itemId){
                 R.id.search_counselor ->{
                     Toast.makeText(this, "상담사찾기", Toast.LENGTH_SHORT).show()
-                    startActivity(Intent(this@CounselListActivity, SearchCounselorActivity::class.java))
+                    counselListPresenter.startCounselorListActivity()
                 }
                 R.id.get_counsel ->{
                     Toast.makeText(this, "상담하기", Toast.LENGTH_SHORT).show()
                 }
                 R.id.my_page ->{
                     Toast.makeText(this, "마이페이지", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this, MyPageActivity::class.java)
-                    intent.putExtra("type",0)
-                    startActivity(intent)
+                    counselListPresenter.startMypageActivity()
                 }
-//                R.id.my_page_counselor ->{
-//                    Toast.makeText(this, "상담사 마이페이지", Toast.LENGTH_SHORT).show()
-//
-//                    val intent = Intent(this, MyPageCounselorActivity::class.java)
-//                    intent.putExtra("type",1)
-//                    startActivity(intent)
-//                }
             }
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        counselListPresenter.clearItems(arrayList, mAdapter)
+        counselListPresenter.loadItems(arrayList, mAdapter)
+        mAdapter.notifyDataSetChanged()
     }
 }
