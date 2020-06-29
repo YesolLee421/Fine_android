@@ -3,9 +3,9 @@
               xmlns:app="http://schemas.android.com/apk/res-auto"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="180dp">
     <androidx.cardview.widget.CardView android:layout_width="match_parent"
-                                       android:layout_height="wrap_content" app:cardElevation="8dp" app:contentPadding="8dp" app:cardUseCompatPadding="true">
+                                       android:layout_height="match_parent" app:cardElevation="8dp" app:contentPadding="8dp" app:cardUseCompatPadding="true">
 
         <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
             <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
@@ -16,9 +16,9 @@
                           android:textColor="@color/customDarkGreen" android:layout_gravity="center"
                           android:text="진행 중"/>
             </LinearLayout>
-            <TextView android:id="@+id/item_counsel_list_tv_sypmtom"  android:layout_width="match_parent"
-                       android:layout_height="wrap_content" android:layout_margin="8dp"
-                       android:text="대인관계, 우울, 불안"/>
+            <TextView android:id="@+id/item_counsel_list_tv_counselor_name" android:layout_width="match_parent"
+                      android:layout_height="wrap_content" android:layout_margin="8dp"
+                      android:text="대인관계, 우울, 불안"/>
             <TextView android:id="@+id/item_counsel_list_tv_nextDate" android:layout_width="match_parent"
                        android:layout_height="wrap_content"
                        android:gravity="end" android:layout_margin="8dp"

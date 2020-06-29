@@ -26,11 +26,12 @@ class SearchCounselorAdapter (
 ) : RecyclerView.Adapter<SearchCounselorAdapter.CounselorViewHolder>() {
 
     fun addItem(item: CounselorData?){
-        Log.e("adapter", "additem 실행 = "+ item?.name_formal)
+        Log.e("SearchCounselorAdapter", "additem 실행 = "+ item?.name_formal)
         arrayList.add(item)
-        Log.e("adapter", "arraylist = "+ itemCount)
+        Log.e("SearchCounselorAdapter", "arraylist = "+ itemCount)
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CounselorViewHolder {
+        Log.e("SearchCounselorAdapter", "onCreateViewHolder 실행")
         val view = LayoutInflater.from(context).inflate(R.layout.item_search_counselor, parent, false)
         return CounselorViewHolder(view)
     }
@@ -40,6 +41,7 @@ class SearchCounselorAdapter (
     }
 
     override fun onBindViewHolder(holder: CounselorViewHolder, position: Int) {
+        Log.e("SearchCounselorAdapter", "onBindViewHolder 실행")
         holder.bind(arrayList[position], context)
     }
 

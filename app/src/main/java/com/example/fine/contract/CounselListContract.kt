@@ -2,6 +2,7 @@ package com.example.fine.presenter
 
 import com.example.fine.adapter.CounselListAdapter
 import com.example.fine.model.Case
+import com.example.fine.model.case_detail
 import com.example.fine.view.BaseView
 
 interface CounselListContract {
@@ -15,13 +16,13 @@ interface CounselListContract {
 
         // 리스트 지우기
         fun clearItems(
-            list: ArrayList<Case?>,
+            list: ArrayList<case_detail?>,
             adapter: CounselListAdapter
         )
 
         // 전체 상담사 리스트
         fun loadItems(
-            list: ArrayList<Case?>,
+            list: ArrayList<case_detail?>,
             adapter: CounselListAdapter
         )
     }

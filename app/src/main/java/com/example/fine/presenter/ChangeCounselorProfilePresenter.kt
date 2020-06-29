@@ -18,14 +18,14 @@ import okhttp3.RequestBody
 
 class ChangeCounselorProfilePresenter : ChangeCounselorProfileContract.Presenter {
 
-    fun makePartMap(name_formal: String, description: String?, gender: Int, picture: String?){
-        // create a map of data to pass along
-
-        val description = RequestBody.create(MediaType.parse("multipart/data"), description)
-        val name_formal = RequestBody.create(MediaType.parse("multipart/data"), name_formal)
-        //val picture = RequestBody.create("multipart/data", null)
-
-    }
+//    fun makePartMap(name_formal: String, description: String?, gender: Int, picture: String?){
+//        // create a map of data to pass along
+//
+//        val description = RequestBody.create(MediaType.parse("multipart/data"), description)
+//        val name_formal = RequestBody.create(MediaType.parse("multipart/data"), name_formal)
+//        //val picture = RequestBody.create("multipart/data", null)
+//
+//    }
     
     fun makeFile(picture: String?){
         executionLog(TAG, "추후 사진 파일 생성 넣기")

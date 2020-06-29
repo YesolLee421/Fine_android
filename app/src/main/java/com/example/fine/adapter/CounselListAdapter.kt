@@ -2,24 +2,28 @@ package com.example.fine.adapter
 
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fine.R
-import com.example.fine.model.Case
+import com.example.fine.model.case_detail
 import com.example.fine.presenter.CounselListPresenter
 import com.example.fine.view.activity.CaseDetailActivity
+import java.text.SimpleDateFormat
 
 class CounselListAdapter (
     val context: Context,
-    var arrayList: ArrayList<Case?>,
+    var arrayList: ArrayList<case_detail?>,
     var counselListPresenter: CounselListPresenter
     ) : RecyclerView.Adapter<CounselListAdapter.CaseViewHolder>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CaseViewHolder {
+        Log.e("CounselListAdapter", "onCreateViewHolder 실행")
         val view = LayoutInflater.from(context).inflate(R.layout.item_counsel_list, parent, false)
         return CaseViewHolder(view)
     }
@@ -29,29 +33,69 @@ class CounselListAdapter (
     }
 
     override fun onBindViewHolder(holder: CaseViewHolder, position: Int) {
+        Log.e("CounselListAdapter", "onBindViewHolder 실행")
         holder.bind(arrayList[position], context)
     }
 
-    fun addItem(item: Case?){
+    fun addItem(item: case_detail?){
         arrayList.add(item)
+        Log.e("CounselListAdapter", "arraylist = "+ itemCount)
+        Log.e("CounselListAdapter", "additem 실행 = "+ item?.counselor_name)
     }
 
     class CaseViewHolder (itemView: View): RecyclerView.ViewHolder(itemView){
         // 레이아웃 - 모델 변수 정의
         val case_title = itemView.findViewById<TextView>(R.id.item_counsel_list_tv_name)
         val case_status = itemView.findViewById<TextView>(R.id.item_counsel_list_tv_status)
-        val case_symptom = itemView.findViewById<TextView>(R.id.item_counsel_list_tv_sypmtom)
+        val case_counselor_name = itemView.findViewById<TextView>(R.id.item_counsel_list_tv_counselor_name)
         val case_nextDate = itemView.findViewById<TextView>(R.id.item_counsel_list_tv_nextDate)
 
-        fun bind(item: Case?, context: Context){
+        fun setTitle(totalCount: Int, usedCase: Int){
+            val str: StringBuilder = StringBuilder()
+            when (totalCount){
+                1-> str.append("1회기권");
+                2-> str.append("2주 프로그램");
+                4-> str.append("4주 프로그램");
+                10-> str.append("10주 프로그램");
+            }
+            str.append(" (")
+            str.append(usedCase)
+            str.append("/")
+            str.append(totalCount)
+            str.append(")")
+            case_title.text = str
+        }
+        fun setStatus(status: Int, context: Context){
+            when(status) {
+                1-> {
+                    case_status.text = "진행 중"
+                    case_status.setTextColor(ContextCompat.getColor(context, R.color.customDarkGreen))
+                }
+                2-> {
+                    case_status.text = "대기 중"
+                    case_status.setTextColor(ContextCompat.getColor(context, R.color.customRed))
+                }
+                3-> {
+                    case_status.text = "완료"
+                    case_status.setTextColor(ContextCompat.getColor(context, R.color.design_dark_default_color_background))
+                }
+            }
+        }
+
+        fun bind(item: case_detail?, context: Context){
             if(item!=null){
-                // case_name 설정
-                
+                // case_title 설정
+                setTitle(item.totalCase, item.usedCase)
+
                 // case_status 설정
-                
-                // case_symptom 설정
-                
+                setStatus(item.status, context)
+
                 // case_nextDate 설정
+                val formatter: SimpleDateFormat = SimpleDateFormat("MM월 dd일 E hh:mm")
+                case_nextDate.text = formatter.format(item.expireDate)
+
+                // counselor_name
+                case_counselor_name.text = item.counselor_name + " 상담사"
 
                 // onClick
                 itemView.setOnClickListener {
@@ -62,5 +106,8 @@ class CounselListAdapter (
                 }
             }
         }
+
+
     }
+
 }

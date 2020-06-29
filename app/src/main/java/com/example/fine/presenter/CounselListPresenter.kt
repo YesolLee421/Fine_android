@@ -4,11 +4,17 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import com.example.fine.adapter.CounselListAdapter
-import com.example.fine.model.Case
+import com.example.fine.model.ServerData_cases
+import com.example.fine.model.case_detail
 import com.example.fine.model.userData
+import com.example.fine.network.RetrofitClient
 import com.example.fine.view.activity.MyPageActivity
 import com.example.fine.view.activity.MyPageCounselorActivity
 import com.example.fine.view.activity.SearchCounselorActivity
+import okhttp3.OkHttpClient
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class CounselListPresenter(): CounselListContract.Presenter {
     override fun getUser() {
@@ -43,12 +49,43 @@ class CounselListPresenter(): CounselListContract.Presenter {
         mContext.startActivity(Intent(mContext, SearchCounselorActivity::class.java))
     }
 
-    override fun clearItems(list: ArrayList<Case?>, adapter: CounselListAdapter) {
+    override fun clearItems(list: ArrayList<case_detail?>, adapter: CounselListAdapter) {
         adapter.arrayList.clear()
     }
 
-    override fun loadItems(list: ArrayList<Case?>, adapter: CounselListAdapter) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun loadItems(list: ArrayList<case_detail?>, adapter: CounselListAdapter) {
+        /* 가져와야 할 정보
+        * Case: case_id / counselor_id/ hasPaper / status / totalCase / nextCase..
+        * counselor: name_formal
+        *
+        * */
+        val client: OkHttpClient = RetrofitClient.getClient(mContext, "addCookie")
+        val apiService = RetrofitClient.serviceAPI(client)
+        val getCounselList_request : Call<ServerData_cases> = apiService.getCases()
+        getCounselList_request.enqueue(object : Callback<ServerData_cases> {
+            override fun onFailure(call: Call<ServerData_cases>, t: Throwable) {
+                executionLog(TAG, "getCounselList_request 실패")
+                executionLog(TAG, t.message!!)
+            }
+
+            override fun onResponse(call: Call<ServerData_cases>, response: Response<ServerData_cases>) {
+                if(response.isSuccessful){
+                    executionLog(TAG, "getCounselList_request 성공")
+                    val result: ServerData_cases = response.body()!!
+                    executionLog(TAG, result.toString())
+                    if(result.success){
+                        for(element in result.data!!){
+                            adapter.addItem(element)
+                        }
+                        adapter.notifyDataSetChanged()
+                        executionLog(TAG, result.message!!)
+                        showMessage(result.message!!)
+                    }
+
+
+                }
+            }
+        })
     }
 
     override lateinit var mView: CounselListContract.View

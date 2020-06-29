@@ -9,14 +9,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.fine.R
 import com.example.fine.adapter.CounselListAdapter
 import com.example.fine.model.Case
+import com.example.fine.model.case_detail
 import com.example.fine.presenter.CounselListContract
 import com.example.fine.presenter.CounselListPresenter
 import kotlinx.android.synthetic.main.activity_counsel_list.*
 
 class CounselListActivity : BaseActivity(), CounselListContract.View {
     override val TAG: String = "CounselListActivity"
-    // Activity와 함께 생성될 Presenter를 지연 초기화
-    private lateinit var counselListPresenter: CounselListPresenter
 
     // 리사이클러뷰 관련 요소
     // 리사이클러뷰
@@ -26,7 +25,10 @@ class CounselListActivity : BaseActivity(), CounselListContract.View {
     // 어댑터
     lateinit var mAdapter: CounselListAdapter
     // 리스트
-    var arrayList = ArrayList<Case?>()
+    var arrayList = ArrayList<case_detail?>()
+
+    // Activity와 함께 생성될 Presenter를 지연 초기화
+    private lateinit var counselListPresenter: CounselListPresenter
 
     override fun initPresenter() {
         counselListPresenter = CounselListPresenter()

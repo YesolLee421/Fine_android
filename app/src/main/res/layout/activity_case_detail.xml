@@ -22,11 +22,11 @@
         </LinearLayout>
         <View style="@style/Divider"/>
 
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:padding="5dp" android:gravity="center">
-            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:text="비밀번호 변경" android:textColor="@android:color/black" android:padding="5dp" android:layout_weight="1"/>
-            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@android:drawable/ic_menu_report_image" android:padding="8dp"/>
-        </LinearLayout>
-        <View style="@style/Divider"/>
+        <!--<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:padding="5dp" android:gravity="center">-->
+            <!--<TextView android:layout_width="0dp" android:layout_height="wrap_content" android:text="비밀번호 변경" android:textColor="@android:color/black" android:padding="5dp" android:layout_weight="1"/>-->
+            <!--<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@android:drawable/ic_menu_report_image" android:padding="8dp"/>-->
+        <!--</LinearLayout>-->
+        <!--<View style="@style/Divider"/>-->
 
         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:padding="5dp" android:gravity="center">
             <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:padding="5dp" android:layout_weight="1">
