@@ -16,8 +16,8 @@
     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                   android:orientation="vertical" android:layout_weight="1">
         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:padding="5dp" android:gravity="center">
-            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@android:drawable/ic_dialog_info" android:padding="8dp"/>
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="이예솔 상담사" android:textColor="@android:color/black" android:layout_weight="1"/>
+            <ImageView android:id="@+id/case_detail_iv_counselor_picture" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@android:drawable/ic_dialog_info" android:padding="8dp"/>
+            <TextView android:id="@+id/case_detail_tv_counselor_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="이예솔 상담사" android:textColor="@android:color/black" android:layout_weight="1"/>
             <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@android:drawable/ic_menu_report_image" android:padding="8dp"/>
         </LinearLayout>
         <View style="@style/Divider"/>
@@ -31,25 +31,25 @@
         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:padding="5dp" android:gravity="center">
             <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:padding="5dp" android:layout_weight="1">
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="상담 접수지" android:textColor="@android:color/black"/>
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="작성 완료" android:textColor="@color/customDarkGreen" />
+                <TextView android:id="@+id/case_detail_tv_hasPaper" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="작성 완료" android:textColor="@color/customDarkGreen" />
             </LinearLayout>
             <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@android:drawable/ic_menu_report_image" android:padding="8dp"/>
         </LinearLayout>
         <View style="@style/Divider"/>
 
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:padding="5dp" android:gravity="center">
-            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:padding="5dp" android:layout_weight="1">
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="주요 문제 및 증상" android:textColor="@android:color/black"/>
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="대인관계 -> 우울, 불안" />
-            </LinearLayout>
-            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@android:drawable/ic_menu_report_image" android:padding="8dp"/>
-        </LinearLayout>
-        <View style="@style/Divider"/>
+        <!--<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:padding="5dp" android:gravity="center">-->
+            <!--<LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:padding="5dp" android:layout_weight="1">-->
+                <!--<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="주요 문제 및 증상" android:textColor="@android:color/black"/>-->
+                <!--<TextView android:id="@+id/case_detail_tv_symptom" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="대인관계 -> 우울, 불안" />-->
+            <!--</LinearLayout>-->
+            <!--<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@android:drawable/ic_menu_report_image" android:padding="8dp"/>-->
+        <!--</LinearLayout>-->
+        <!--<View style="@style/Divider"/>-->
 
         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:padding="5dp" android:gravity="center">
             <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:padding="5dp" android:layout_weight="1">
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="진행상황" android:textColor="@android:color/black"/>
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="총 2회기 중 1회기 완료 (1/2)" />
+                <TextView android:id="@+id/case_detail_tv_status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="총 2회기 중 1회기 완료 (1/2)" />
             </LinearLayout>
             <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@android:drawable/ic_menu_report_image" android:padding="8dp"/>
         </LinearLayout>
@@ -58,7 +58,7 @@
         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:padding="5dp" android:gravity="center">
             <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:padding="5dp" android:layout_weight="1">
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="다음 상담 일정" android:textColor="@android:color/black"/>
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="6/3 수요일 16시 (2회기)" android:textColor="@color/customDarkGreen" />
+                <TextView android:id="@+id/case_detail_tv_nextDate" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="6/3 수요일 16시 (2회기)" android:textColor="@color/customDarkGreen" />
             </LinearLayout>
             <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@android:drawable/ic_menu_report_image" android:padding="8dp"/>
         </LinearLayout>

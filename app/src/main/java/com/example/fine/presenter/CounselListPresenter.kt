@@ -82,7 +82,6 @@ class CounselListPresenter(): CounselListContract.Presenter {
                         showMessage(result.message!!)
                     }
 
-
                 }
             }
         })

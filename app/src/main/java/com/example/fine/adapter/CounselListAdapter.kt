@@ -14,7 +14,10 @@ import com.example.fine.R
 import com.example.fine.model.case_detail
 import com.example.fine.presenter.CounselListPresenter
 import com.example.fine.view.activity.CaseDetailActivity
+import kotlinx.android.synthetic.main.activity_case_detail.*
 import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
 
 class CounselListAdapter (
     val context: Context,
@@ -91,11 +94,15 @@ class CounselListAdapter (
                 setStatus(item.status, context)
 
                 // case_nextDate 설정
-                val formatter: SimpleDateFormat = SimpleDateFormat("MM월 dd일 E hh:mm")
-                case_nextDate.text = formatter.format(item.expireDate)
+                val formatter = SimpleDateFormat("MM월 dd일 E a hh:mm", Locale.KOREA)
+                if(item.nextCase==null){
+                    case_nextDate.text = "미정"
+                } else {
+                    case_nextDate.text = formatter.format(item.nextCase!!)
+                }
 
                 // counselor_name
-                case_counselor_name.text = item.counselor_name + " 상담사"
+                case_counselor_name.text = "${item.counselor_name} 상담사"
 
                 // onClick
                 itemView.setOnClickListener {

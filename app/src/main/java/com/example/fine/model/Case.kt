@@ -39,7 +39,7 @@ class case_detail(
     @SerializedName("discountRate")
     var totalPrice: Int,
     @SerializedName("nextCase")
-    var nextCase: Date,
+    var nextCase: Date?,
     @SerializedName("expireDate")
     var expireDate: Date,
     @SerializedName("fk_user_uid")
