@@ -78,7 +78,7 @@ class CounselorDetailPresenter: CounselorDetailContract.Presenter {
         showMessage("상담신청으로 이동")
         executionLog(TAG, "상담신청으로 이동")
         val intent: Intent = Intent(mContext, RequestCounselingActivity::class.java)
-        intent.putExtra("counselor_uid", counselorData.user_uid)
+        intent.putExtra("counselor_id", counselorData.user_uid)
         intent.putExtra("price", counselorData.price )
         intent.putExtra("discount_4w", counselorData.discount_4w)
         intent.putExtra("discount_10w", counselorData.discount_10w)
