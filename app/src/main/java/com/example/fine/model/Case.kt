@@ -26,6 +26,8 @@ class case_detail(
     var counselor_picture: String?,
     @SerializedName("id")
     var case_id: Int,
+    @SerializedName("paper_id")
+    var paper_id: Int,
     @SerializedName("counselor_id")
     var counselor_id: String,
     @SerializedName("hasPaper")

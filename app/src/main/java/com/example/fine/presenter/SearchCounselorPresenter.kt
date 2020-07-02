@@ -82,10 +82,8 @@ class SearchCounselorPresenter() : SearchCounselorContract.Presenter {
 
     override fun getUser(){
         preferences = mContext.getSharedPreferences("USERSIGN", 0)
-
         user.user_uid = preferences.getString("user_uid", "")!!
         user.email = preferences.getString("user_email", "")!!
-        //user.password = preferences.getString("user_password", "")!!
         user.nickname = preferences.getString("user_nickname","")!!
         user.type = preferences.getInt("user_type", 3)
     }

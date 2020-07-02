@@ -2,6 +2,15 @@ package com.example.fine.model
 
 import com.google.gson.annotations.SerializedName
 
+data class ServerData_paper (
+    @SerializedName("success")
+    var success: Boolean = false,
+    @SerializedName("data")
+    var data: Paper? = null,
+    @SerializedName("message")
+    var message: String? = ""
+)
+
 class Paper (
     @SerializedName("id")
     var id: Int,

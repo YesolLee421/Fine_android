@@ -20,6 +20,7 @@ class CaseDetailActivity : BaseActivity(), CaseDetailContract.View {
 
         // 상담접수지 제출 여부: 미제출, 제출 완료
         if(case.hasPaper){
+            paper_id = case.paper_id
             case_detail_tv_hasPaper.text = "제출 완료"
             case_detail_tv_hasPaper.setTextColor(ContextCompat.getColor(this, R.color.customDarkGreen))
         } else {
@@ -44,6 +45,7 @@ class CaseDetailActivity : BaseActivity(), CaseDetailContract.View {
 
     override val TAG: String = "CaseDetailActivity"
     lateinit var caseDetailPresenter: CaseDetailPresenter
+    var paper_id : Int = -1
 
     override fun initPresenter() {
         caseDetailPresenter = CaseDetailPresenter()
@@ -57,6 +59,9 @@ class CaseDetailActivity : BaseActivity(), CaseDetailContract.View {
 
         case_detail_btn.setOnClickListener { // 채팅상담 시작
             caseDetailPresenter.startChatRoomActivity()
+        }
+        case_detail_btn_paper.setOnClickListener {
+            caseDetailPresenter.startCheckPaperActivity(paper_id)
         }
     }
 

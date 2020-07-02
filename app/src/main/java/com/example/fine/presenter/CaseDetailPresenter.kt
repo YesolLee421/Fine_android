@@ -7,6 +7,7 @@ import com.example.fine.model.ServerData_cases
 import com.example.fine.model.ServerData_counselor
 import com.example.fine.network.RetrofitClient
 import com.example.fine.view.activity.ChatRoomActivity
+import com.example.fine.view.activity.CheckCounselPaperActivity
 import okhttp3.OkHttpClient
 import retrofit2.Call
 import retrofit2.Callback
@@ -14,6 +15,14 @@ import retrofit2.Response
 
 
 class CaseDetailPresenter: CaseDetailContract.Presenter {
+    override fun startCheckPaperActivity(paper_id: Int) {
+        showMessage("상담 접수지 확인으로 이동")
+        executionLog(TAG, "상담 접수지 확인으로 이동")
+        val intent = Intent(mContext, CheckCounselPaperActivity::class.java)
+        intent.putExtra("paper_id", paper_id)
+        mContext.startActivity(intent)
+    }
+
     override fun startChatRoomActivity() {
         showMessage("채팅 상담방으로 이동")
         executionLog(TAG, "채팅 상담방으로 이동")

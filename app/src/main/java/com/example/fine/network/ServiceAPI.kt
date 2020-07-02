@@ -91,5 +91,12 @@ interface ServiceAPI {
     @PATCH("/cases/paper/{case_id}")
     fun setPaper(@Path("case_id") case_id: Int): Call<ServerData_case>
 
+    // 상담 접수지 Paper 관련
+    @GET("/paper") // 유저가 본인의 접수지 확인
+    fun getUserPaper(): Call<ServerData_paper>
+
+    @GET("/paper/{paper_id}") // 상담사가 접수지 확인
+    fun getCasePaper(@Path("paper_id") paper_id: Int) : Call<ServerData_paper>
+
 
 }
