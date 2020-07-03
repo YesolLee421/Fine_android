@@ -46,7 +46,7 @@ class CheckCounselPaperPresenter : CheckCounselPaperContract.Presenter{
             showMessage("상담 접수지 제출 안 함")
             return
         } else {
-            if(user.type==2) {
+            if(user.type==3) {
                 getPaper_request = apiService.getUserPaper()
             } else {
                 getPaper_request = apiService.getCasePaper(paper_id)

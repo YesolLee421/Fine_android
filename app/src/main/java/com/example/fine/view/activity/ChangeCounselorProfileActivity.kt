@@ -24,8 +24,8 @@ class ChangeCounselorProfileActivity : BaseActivity(), ChangeCounselorProfileCon
     override fun onItemSelected(parent: AdapterView<*>?, p1: View?, position: Int, p3: Long) {
         val item: String = parent?.getItemAtPosition(position).toString()
         changeCounselorProfilePresenter.showMessage(item + " 선택")
-        setGender(position+1)
-        gender = position+1
+        setGender(position)
+        gender = position
     }
 
     // 정보 보여주는 함수
@@ -68,8 +68,8 @@ class ChangeCounselorProfileActivity : BaseActivity(), ChangeCounselorProfileCon
     // 성별 int 받아서 string 리턴
     fun setGender(gender: Int): String{
         when(gender){
-            1-> return "여성"
-            2-> return "남성"
+            0-> return "여성"
+            1-> return "남성"
             else -> return "기타"
         }
     }
@@ -92,7 +92,7 @@ class ChangeCounselorProfileActivity : BaseActivity(), ChangeCounselorProfileCon
         var name_formal: String? = intent.getStringExtra("name_formal")
         var description = intent.getStringExtra("description")
         var picture: String? = intent.getStringExtra("picture")
-        gender = intent.getIntExtra("gender",1)
+        gender = intent.getIntExtra("gender",0)
         val count: Int = intent.getIntExtra("count",0)
         val isVerified = intent.getBooleanExtra("isVerified", false)
 

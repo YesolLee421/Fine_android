@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
@@ -8,12 +8,7 @@
         android:orientation="vertical"
         android:paddingTop="8dp">
 
-    <TextView android:id="@+id/write_counsel_paper2_title" style="@style/Title" app:layout_constraintTop_toTopOf="parent"
-              app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" android:text="상담 접수지 (2/3)"/>
-    <View android:id="@+id/write_counsel_paper2_divider1" style="@style/Divider" app:layout_constraintTop_toBottomOf="@+id/write_counsel_paper2_title"
-          app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"/>
-
-    <ScrollView android:layout_width="match_parent" android:layout_height="0dp"
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent"
                 app:layout_constraintTop_toBottomOf="@+id/write_counsel_paper2_divider1"
                 app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toTopOf="@+id/write_counsel_paper2_btn_box">
@@ -21,11 +16,6 @@
         <LinearLayout android:id="@+id/write_counsel_paper_linear" android:layout_width="match_parent"
                       android:layout_height="0dp" android:orientation="vertical">
 
-
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center"
-                      android:layout_margin="16dp"
-                      android:text="상담사가 선호하는 시간대를 최소 1개 이상 입력해주세요. 반드시 해당 시간에만 상담할 수 있는 것은 아니지만,
-내담자들이 이 일정을 참고하여 상담을 신청하게 됩니다."/>
 
             <TextView style="@style/Title2" android:text="1) 심리 상담을 받아 본 적이 있으신가요?"/>
             <RadioGroup android:layout_width="match_parent" android:layout_height="wrap_content">
@@ -185,17 +175,4 @@
 
     </ScrollView>
 
-
-    <LinearLayout android:id="@+id/write_counsel_paper2_btn_box" android:layout_width="match_parent"
-                  android:layout_height="60dp"
-                  app:layout_constraintStart_toStartOf="parent" android:background="@color/customLightGrey"
-                  app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent"
-                  android:orientation="horizontal"
-                  android:gravity="center" android:padding="8dp">
-        <TextView style="@style/Title2" android:layout_width="0dp"
-                  android:text="&lt; 이전" android:layout_weight="1"/>
-        <TextView style="@style/Title2" android:layout_width="0dp"
-                  android:gravity="end" android:text="다음 &gt;" android:layout_weight="1"/>
-
-    </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

@@ -35,9 +35,9 @@ class Paper (
     @SerializedName("livingCondition")
     var livingCondition: Int?,
     @SerializedName("isMarried")
-    var isMarried: Boolean?,
+    var isMarried: Int?,
     @SerializedName("hasMate")
-    var hasMate: Boolean?,
+    var hasMate: Int?,
     @SerializedName("family")
     var family: String?,
     @SerializedName("request")

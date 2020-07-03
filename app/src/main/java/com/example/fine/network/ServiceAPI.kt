@@ -88,7 +88,7 @@ interface ServiceAPI {
     fun createCase(@Body createCase: createCase): Call<ServerData_case>
 
     // 상담 케이스 변경: 상담 접수지 제출
-    @PATCH("/cases/paper/{case_id}")
+    @PUT("/cases/paper/{case_id}")
     fun setPaper(@Path("case_id") case_id: Int): Call<ServerData_case>
 
     // 상담 접수지 Paper 관련
@@ -97,6 +97,9 @@ interface ServiceAPI {
 
     @GET("/paper/{paper_id}") // 상담사가 접수지 확인
     fun getCasePaper(@Path("paper_id") paper_id: Int) : Call<ServerData_paper>
+
+    @PUT("/paper")
+    fun changePaper() : Call<ServerData_paper>
 
 
 }

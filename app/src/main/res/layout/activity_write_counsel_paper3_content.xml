@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".view.activity.WriteCounselPaperActivity"
+        android:orientation="vertical"
+        android:paddingTop="8dp">
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent"
+                app:layout_constraintTop_toBottomOf="@+id/write_counsel_paper2_divider1"
+                app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/write_counsel_paper2_btn_box">
+
+        <LinearLayout android:id="@+id/write_counsel_paper_linear" android:layout_width="match_parent"
+                      android:layout_height="wrap_content" android:orientation="vertical">
+
+
+            <TextView style="@style/Title2" android:text="1) 종교"/>
+            <RadioGroup android:layout_width="match_parent" android:layout_height="wrap_content">
+                <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="종교 없음"/>
+                <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="기독교"/>
+                <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="천주교"/>
+                <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="불교"/>
+                <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="기타"/>
+            </RadioGroup>
+
+            <TextView style="@style/Title2" android:text="2) 최종 학력" android:paddingTop="16dp"/>
+            <RadioGroup android:layout_width="match_parent" android:layout_height="wrap_content">
+                <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="중졸 이하"/>
+                <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="고졸"/>
+                <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                             android:text="대학 재학(휴학 포함)"/>
+                <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="대학 졸업"/>
+                <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="석사 재학 이상"/>
+            </RadioGroup>
+
+            <TextView style="@style/Title2" android:text="3)스스로 느끼는 경제생활수준은?" android:paddingTop="16dp"/>
+            <RadioGroup android:layout_width="match_parent" android:layout_height="wrap_content">
+                <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="아주 힘들다."/>
+                <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="조금 힘들다."/>
+                <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="보통이다."/>
+                <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="여유 있다."/>
+                <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="충분히 여유 있다."/>
+            </RadioGroup>
+
+            <TextView style="@style/Title2" android:text="4) 결혼 여부" android:paddingTop="16dp"/>
+            <RadioGroup android:layout_width="match_parent" android:layout_height="wrap_content">
+                <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="미혼"/>
+                <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="기혼"/>
+                <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="이혼"/>
+                <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="사별"/>
+            </RadioGroup>
+
+            <TextView style="@style/Title2" android:text="5) 동거인 유/무" android:paddingTop="16dp"/>
+            <RadioGroup android:layout_width="match_parent" android:layout_height="wrap_content">
+                <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="있습니다."/>
+                <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="없습니다."/>
+            </RadioGroup>
+
+            <TextView style="@style/Title2" android:text="6) 원가족(결혼 전 원래 가족, 부모 및 형제자매) 관계를 알려주세요." android:paddingTop="16dp"/>
+            <EditText android:layout_margin="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="아버지, 어머니(이혼), 2살 아래 남동생"/>
+
+
+            <TextView style="@style/Title2" android:text="7) 상담사님께 추가로 전할 사항이 있으신가요?" android:paddingTop="16dp"/>
+            <EditText android:layout_margin="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="자유롭게 작성해주세요."/>
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
