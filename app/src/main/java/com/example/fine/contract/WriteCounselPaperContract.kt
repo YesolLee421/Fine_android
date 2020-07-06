@@ -1,5 +1,6 @@
 package com.example.fine.presenter
 
+import com.example.fine.model.ChangePaperAll
 import com.example.fine.model.Paper
 import com.example.fine.view.BaseView
 
@@ -8,7 +9,7 @@ interface WriteCounselPaperContract {
         fun showInfo(paper: Paper)
     }
     interface Presenter : BasePresenter<View>{
-        fun saveInfo(paper: Paper)
+        fun saveInfo(paper: ChangePaperAll)
         fun loadData()
     }
 }

@@ -1,6 +1,25 @@
 package com.example.fine.model
 
 import com.google.gson.annotations.SerializedName
+import org.json.JSONArray
+
+// 상담사 선호시간 변경 시 보낼 정보
+class ChangePaperAll(
+    var gender: Int,
+    var birth_year: Int,
+    var job: Int?,
+    var counselBefore: Int?,
+    var clinicBefore: Int?,
+    var problem: JSONArray?,
+    var symptom: JSONArray?,
+    var religion: Int?,
+    var education: Int?,
+    var livingCondition: Int?,
+    var isMarried: Int?,
+    var hasMate: Int?,
+    var family: String?,
+    var request: String?
+    )
 
 data class ServerData_paper (
     @SerializedName("success")

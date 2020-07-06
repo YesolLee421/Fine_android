@@ -54,10 +54,6 @@ class ChangeTimePrefered(
     var day: JSONArray?,
     var time: JSONArray?
 )
-//class ChangeTimePrefered(
-//    var day: String,
-//    var time: String
-//)
 
 // 상담 가격 변경 시 보낼 정보
 class ChangePrice(

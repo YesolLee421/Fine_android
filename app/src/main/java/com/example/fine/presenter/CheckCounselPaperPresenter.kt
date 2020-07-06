@@ -41,17 +41,18 @@ class CheckCounselPaperPresenter : CheckCounselPaperContract.Presenter{
         val apiService = RetrofitClient.serviceAPI(client)
         // 유저 본인의 접수지 제출
         var getPaper_request : Call<ServerData_paper>? = null
-        if(paper_id==-1){
-            executionLog(TAG, "상담 접수지 제출 안 함")
-            showMessage("상담 접수지 제출 안 함")
-            return
+        if(user.type==3) {
+            getPaper_request = apiService.getUserPaper()
         } else {
-            if(user.type==3) {
-                getPaper_request = apiService.getUserPaper()
+            if(paper_id==-1){
+                executionLog(TAG, "상담 접수지 제출 안 함")
+                showMessage("상담 접수지 제출 안 함")
+                return
             } else {
                 getPaper_request = apiService.getCasePaper(paper_id)
             }
         }
+
         getPaper_request.enqueue(object : Callback<ServerData_paper> {
             override fun onFailure(call: Call<ServerData_paper>, t: Throwable) {
                 executionLog(TAG, "getPaper_request 실패")
@@ -71,9 +72,7 @@ class CheckCounselPaperPresenter : CheckCounselPaperContract.Presenter{
                     }
                 }
             }
-
         })
-
     }
 
     override lateinit var mView: CheckCounselPaperContract.View

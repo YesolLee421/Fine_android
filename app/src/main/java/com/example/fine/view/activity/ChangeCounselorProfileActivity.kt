@@ -103,17 +103,22 @@ class ChangeCounselorProfileActivity : BaseActivity(), ChangeCounselorProfileCon
 
         // save 버튼
         change_profile_btn_save.setOnClickListener {
-            if(name_formal==null && change_profile_et_name_formal.text.toString()==""){
-                changeCounselorProfilePresenter.showMessage("실명을 반드시 적어주십시오.")
-                name_formal = change_profile_et_name_formal.text.toString()
-            }
             description = change_profile_et_description.text.toString()
             // gender는 이미 저장됨
             // picture는 추후 구현
             picture = null
 
-            // 여기 picture 정보가 없다. 괜찮나? 어차피 file로 보낼거긴 한데
-            changeCounselorProfilePresenter.saveInfo(name_formal!!, description, gender, picture)
+            if(name_formal==null) {
+                if(change_profile_et_name_formal.text.toString()=="") {
+                    changeCounselorProfilePresenter.showMessage("실명을 반드시 적어주십시오.")
+                } else {
+                    name_formal = change_profile_et_name_formal.text.toString()
+                    changeCounselorProfilePresenter.saveInfo(name_formal!!, description, gender, picture)
+                }
+            } else {
+                name_formal = change_profile_tv_name_formal.text.toString()
+                changeCounselorProfilePresenter.saveInfo(name_formal!!, description, gender, picture)
+            }
         }
     }
 

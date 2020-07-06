@@ -16,8 +16,8 @@ class ChangeCounselorTimePreferedActivity : BaseActivity() , ChangeCounselorTime
 
     fun showDay(day: JSONArray?){
         if(day!=null && day.length()!=0){
-            for(i in 0 until day.length()){
-                val str_day: String = day[i].toString()
+            for(element in 0 until day.length()){
+                val str_day: String = day[element].toString()
                 when(str_day){
                     "mon"-> activity_change_counselor_day_prefered_cb1_mon.isChecked = true
                     "tue"-> activity_change_counselor_day_prefered_cb2_tue.isChecked = true

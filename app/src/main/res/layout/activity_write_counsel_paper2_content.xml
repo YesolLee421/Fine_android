@@ -38,65 +38,65 @@
             <TextView style="@style/Title2" android:text="3) 상담을 원하는 상황을 선택해주세요." android:paddingTop="16dp"/>
             <TableLayout android:layout_width="match_parent" android:layout_height="wrap_content">
                 <TableRow>
-                    <CheckBox android:id="@+id/write_counsel_paper2_problem1" android:layout_width="wrap_content"
+                    <CheckBox android:id="@+id/write_counsel_paper_problem1" android:layout_width="wrap_content"
                               android:layout_height="wrap_content" android:layout_marginLeft="8dp"
                               android:layout_marginRight="8dp" android:text="일반"/>
                     <CheckBox android:id="@+id/write_counsel_paper2_problem2" android:layout_width="wrap_content"
                               android:layout_height="wrap_content" android:layout_marginLeft="8dp"
                               android:layout_marginRight="8dp" android:text="연애"/>
-                    <CheckBox android:id="@+id/write_counsel_paper2_problem3" android:layout_width="wrap_content"
+                    <CheckBox android:id="@+id/write_counsel_paper_problem3" android:layout_width="wrap_content"
                               android:layout_height="wrap_content" android:layout_marginLeft="8dp"
                               android:layout_marginRight="8dp" android:text="대인관계"/>
                 </TableRow>
                 <TableRow>
-                    <CheckBox android:id="@+id/write_counsel_paper2_problem4" android:layout_width="wrap_content"
+                    <CheckBox android:id="@+id/write_counsel_paper_problem4" android:layout_width="wrap_content"
                               android:layout_height="wrap_content" android:layout_marginLeft="8dp"
                               android:layout_marginRight="8dp" android:text="정신건강"/>
-                    <CheckBox android:id="@+id/write_counsel_paper2_problem5" android:layout_width="wrap_content"
+                    <CheckBox android:id="@+id/write_counsel_paper_problem5" android:layout_width="wrap_content"
                               android:layout_height="wrap_content" android:layout_marginLeft="8dp"
                               android:layout_marginRight="8dp" android:text="자아/성격"/>
-                    <CheckBox android:id="@+id/write_counsel_paper2_problem6" android:layout_width="wrap_content"
+                    <CheckBox android:id="@+id/write_counsel_paper_problem6" android:layout_width="wrap_content"
                               android:layout_height="wrap_content" android:layout_marginLeft="8dp"
                               android:layout_marginRight="8dp" android:text="가족"/>
                 </TableRow>
                 <TableRow>
-                    <CheckBox android:id="@+id/write_counsel_paper2_problem7" android:layout_width="wrap_content"
+                    <CheckBox android:id="@+id/write_counsel_paper_problem7" android:layout_width="wrap_content"
                               android:layout_height="wrap_content" android:layout_marginLeft="8dp"
                               android:layout_marginRight="8dp" android:text="취업/진로"/>
-                    <CheckBox android:id="@+id/write_counsel_paper2_problem8" android:layout_width="wrap_content"
+                    <CheckBox android:id="@+id/write_counsel_paper_problem8" android:layout_width="wrap_content"
                               android:layout_height="wrap_content" android:layout_marginLeft="8dp"
                               android:layout_marginRight="8dp" android:text="학업/고시"/>
-                    <CheckBox android:id="@+id/write_counsel_paper2_problem9" android:layout_width="wrap_content"
+                    <CheckBox android:id="@+id/write_counsel_paper_problem9" android:layout_width="wrap_content"
                               android:layout_height="wrap_content" android:layout_marginLeft="8dp"
                               android:layout_marginRight="8dp" android:text="성추행"/>
                 </TableRow>
                 <TableRow>
-                    <CheckBox android:id="@+id/write_counsel_paper2_problem10" android:layout_width="wrap_content"
+                    <CheckBox android:id="@+id/write_counsel_paper_problem10" android:layout_width="wrap_content"
                               android:layout_height="wrap_content" android:layout_marginLeft="8dp"
                               android:layout_marginRight="8dp" android:text="직장"/>
-                    <CheckBox android:id="@+id/write_counsel_paper2_problem11" android:layout_width="wrap_content"
+                    <CheckBox android:id="@+id/write_counsel_paper_problem11" android:layout_width="wrap_content"
                               android:layout_height="wrap_content" android:layout_marginLeft="8dp"
                               android:layout_marginRight="8dp" android:text="외모"/>
-                    <CheckBox android:id="@+id/write_counsel_paper2_problem12" android:layout_width="wrap_content"
+                    <CheckBox android:id="@+id/write_counsel_paper_problem12" android:layout_width="wrap_content"
                               android:layout_height="wrap_content" android:layout_marginLeft="8dp"
                               android:layout_marginRight="8dp" android:text="결혼/육아"/>
                 </TableRow>
                 <TableRow>
-                    <CheckBox android:id="@+id/write_counsel_paper2_problem13" android:layout_width="wrap_content"
+                    <CheckBox android:id="@+id/write_counsel_paper_problem13" android:layout_width="wrap_content"
                               android:layout_height="wrap_content" android:layout_marginLeft="8dp"
                               android:layout_marginRight="8dp" android:text="금전/사업"/>
-                    <CheckBox android:id="@+id/write_counsel_paper2_problem14" android:layout_width="wrap_content"
+                    <CheckBox android:id="@+id/write_counsel_paper_problem14" android:layout_width="wrap_content"
                               android:layout_height="wrap_content" android:layout_marginLeft="8dp"
                               android:layout_marginRight="8dp" android:text="신체건강"/>
-                    <CheckBox android:id="@+id/write_counsel_paper2_problem15" android:layout_width="wrap_content"
+                    <CheckBox android:id="@+id/write_counsel_paper_problem15" android:layout_width="wrap_content"
                               android:layout_height="wrap_content" android:layout_marginLeft="8dp"
                               android:layout_marginRight="8dp" android:text="이별/이혼"/>
                 </TableRow>
                 <TableRow>
-                    <CheckBox android:id="@+id/write_counsel_paper2_problem16" android:layout_width="wrap_content"
+                    <CheckBox android:id="@+id/write_counsel_paper_problem16" android:layout_width="wrap_content"
                               android:layout_height="wrap_content" android:layout_marginLeft="8dp"
                               android:layout_marginRight="8dp" android:text="중독/집착"/>
-                    <CheckBox android:id="@+id/write_counsel_paper2_problem17" android:layout_width="wrap_content"
+                    <CheckBox android:id="@+id/write_counsel_paper_problem17" android:layout_width="wrap_content"
                               android:layout_height="wrap_content" android:layout_marginLeft="8dp"
                               android:layout_marginRight="8dp" android:text="LGBT"/>
                 </TableRow>
@@ -106,65 +106,65 @@
             <TextView style="@style/Title2" android:text="4) 경험하고 있는 심리적 어려움을 알려주세요." android:paddingTop="16dp"/>
             <TableLayout android:layout_width="match_parent" android:layout_height="wrap_content">
                 <TableRow>
-                    <CheckBox android:id="@+id/write_counsel_paper2_symptom1" android:layout_width="wrap_content"
+                    <CheckBox android:id="@+id/write_counsel_paper_symptom1" android:layout_width="wrap_content"
                               android:layout_height="wrap_content" android:layout_marginLeft="8dp"
                               android:layout_marginRight="8dp" android:text="스트레스"/>
-                    <CheckBox android:id="@+id/write_counsel_paper2_symptom2" android:layout_width="wrap_content"
+                    <CheckBox android:id="@+id/write_counsel_paper_symptom2" android:layout_width="wrap_content"
                               android:layout_height="wrap_content" android:layout_marginLeft="8dp"
                               android:layout_marginRight="8dp" android:text="조울증"/>
-                    <CheckBox android:id="@+id/write_counsel_paper2_symptom3" android:layout_width="wrap_content"
+                    <CheckBox android:id="@+id/write_counsel_paper_symptom3" android:layout_width="wrap_content"
                               android:layout_height="wrap_content" android:layout_marginLeft="8dp"
                               android:layout_marginRight="8dp" android:text="우울"/>
                 </TableRow>
                 <TableRow>
-                    <CheckBox android:id="@+id/write_counsel_paper2_symptom4" android:layout_width="wrap_content"
+                    <CheckBox android:id="@+id/write_counsel_paper_symptom4" android:layout_width="wrap_content"
                               android:layout_height="wrap_content" android:layout_marginLeft="8dp"
                               android:layout_marginRight="8dp" android:text="불안"/>
-                    <CheckBox android:id="@+id/write_counsel_paper2_symptom5" android:layout_width="wrap_content"
+                    <CheckBox android:id="@+id/write_counsel_paper_symptom5" android:layout_width="wrap_content"
                               android:layout_height="wrap_content" android:layout_marginLeft="8dp"
                               android:layout_marginRight="8dp" android:text="화병"/>
-                    <CheckBox android:id="@+id/write_counsel_paper2_symptom6" android:layout_width="wrap_content"
+                    <CheckBox android:id="@+id/write_counsel_paper_symptom6" android:layout_width="wrap_content"
                               android:layout_height="wrap_content" android:layout_marginLeft="8dp"
                               android:layout_marginRight="8dp" android:text="공황"/>
                 </TableRow>
                 <TableRow>
-                    <CheckBox android:id="@+id/write_counsel_paper2_symptom7" android:layout_width="wrap_content"
+                    <CheckBox android:id="@+id/write_counsel_paper_symptom7" android:layout_width="wrap_content"
                               android:layout_height="wrap_content" android:layout_marginLeft="8dp"
                               android:layout_marginRight="8dp" android:text="강박"/>
-                    <CheckBox android:id="@+id/write_counsel_paper2_symptom8" android:layout_width="wrap_content"
+                    <CheckBox android:id="@+id/write_counsel_paper_symptom8" android:layout_width="wrap_content"
                               android:layout_height="wrap_content" android:layout_marginLeft="8dp"
                               android:layout_marginRight="8dp" android:text="트라우마"/>
-                    <CheckBox android:id="@+id/write_counsel_paper2_symptom9" android:layout_width="wrap_content"
+                    <CheckBox android:id="@+id/write_counsel_paper_symptom9" android:layout_width="wrap_content"
                               android:layout_height="wrap_content" android:layout_marginLeft="8dp"
                               android:layout_marginRight="8dp" android:text="자존감"/>
                 </TableRow>
                 <TableRow>
-                    <CheckBox android:id="@+id/write_counsel_paper2_symptom10" android:layout_width="wrap_content"
+                    <CheckBox android:id="@+id/write_counsel_paper_symptom10" android:layout_width="wrap_content"
                               android:layout_height="wrap_content" android:layout_marginLeft="8dp"
                               android:layout_marginRight="8dp" android:text="콤플렉스"/>
-                    <CheckBox android:id="@+id/write_counsel_paper2_symptom11" android:layout_width="wrap_content"
+                    <CheckBox android:id="@+id/write_counsel_paper_symptom11" android:layout_width="wrap_content"
                               android:layout_height="wrap_content" android:layout_marginLeft="8dp"
                               android:layout_marginRight="8dp" android:text="신체화 (몸 이상)"/>
-                    <CheckBox android:id="@+id/write_counsel_paper2_symptom12" android:layout_width="wrap_content"
+                    <CheckBox android:id="@+id/write_counsel_paper_symptom12" android:layout_width="wrap_content"
                               android:layout_height="wrap_content" android:layout_marginLeft="8dp"
                               android:layout_marginRight="8dp" android:text="불면"/>
                 </TableRow>
                 <TableRow>
-                    <CheckBox android:id="@+id/write_counsel_paper2_symptom13" android:layout_width="wrap_content"
+                    <CheckBox android:id="@+id/write_counsel_paper_symptom13" android:layout_width="wrap_content"
                               android:layout_height="wrap_content" android:layout_marginLeft="8dp"
                               android:layout_marginRight="8dp" android:text="섭식 (식사문제)"/>
-                    <CheckBox android:id="@+id/write_counsel_paper2_sympto14m" android:layout_width="wrap_content"
+                    <CheckBox android:id="@+id/write_counsel_paper_symptom14" android:layout_width="wrap_content"
                               android:layout_height="wrap_content" android:layout_marginLeft="8dp"
                               android:layout_marginRight="8dp" android:text="충동/폭력"/>
-                    <CheckBox android:id="@+id/write_counsel_paper2_symptom15" android:layout_width="wrap_content"
+                    <CheckBox android:id="@+id/write_counsel_paper_symptom15" android:layout_width="wrap_content"
                               android:layout_height="wrap_content" android:layout_marginLeft="8dp"
                               android:layout_marginRight="8dp" android:text="자살"/>
                 </TableRow>
                 <TableRow>
-                    <CheckBox android:id="@+id/write_counsel_paper2_symptom16" android:layout_width="wrap_content"
+                    <CheckBox android:id="@+id/write_counsel_paper_symptom16" android:layout_width="wrap_content"
                               android:layout_height="wrap_content" android:layout_marginLeft="8dp"
                               android:layout_marginRight="8dp" android:text="조현병"/>
-                    <CheckBox android:id="@+id/write_counsel_paper2_symptom17" android:layout_width="wrap_content"
+                    <CheckBox android:id="@+id/write_counsel_paper_symptom17" android:layout_width="wrap_content"
                               android:layout_height="wrap_content" android:layout_marginLeft="8dp"
                               android:layout_marginRight="8dp" android:text="기타"/>
                 </TableRow>

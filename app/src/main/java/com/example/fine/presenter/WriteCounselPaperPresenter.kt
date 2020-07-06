@@ -1,6 +1,7 @@
 package com.example.fine.presenter
 
 import android.content.Context
+import com.example.fine.model.ChangePaperAll
 import com.example.fine.model.Paper
 import com.example.fine.model.ServerData_paper
 import com.example.fine.network.RetrofitClient
@@ -10,12 +11,12 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class WriteCounselPaperPresenter : WriteCounselPaperContract.Presenter{
-    override fun saveInfo(paper: Paper) {
+    override fun saveInfo(paper: ChangePaperAll) {
         // 서버로 상담접수지 정보 요청 보내기
         val client: OkHttpClient = RetrofitClient.getClient(mContext, "addCookie")
         val apiService = RetrofitClient.serviceAPI(client)
         // 유저 본인의 접수지 조회
-        val savePaper_request : Call<ServerData_paper> = apiService.changePaper()
+        val savePaper_request : Call<ServerData_paper> = apiService.changePaper(paper)
         savePaper_request.enqueue(object : Callback<ServerData_paper> {
             override fun onFailure(call: Call<ServerData_paper>, t: Throwable) {
                 executionLog(TAG, "savePaper_request 실패")
