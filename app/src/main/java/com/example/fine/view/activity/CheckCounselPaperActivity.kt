@@ -24,8 +24,8 @@ class CheckCounselPaperActivity : BaseActivity(), CheckCounselPaperContract.View
 
     fun setGender(gender: Int?): String{
         when (gender){
-            1-> return "여성"
-            2-> return "남성"
+            0-> return "여성"
+            1-> return "남성"
             null -> return "선택 안함"
             else -> return "기타"
         }
@@ -36,7 +36,7 @@ class CheckCounselPaperActivity : BaseActivity(), CheckCounselPaperContract.View
         val str: StringBuilder = StringBuilder()
         if(jsonArray!==null && jsonArray.length()!=0) {
             for (element in 0 until  jsonArray.length()) {
-                str.append(list[element])
+                str.append(list[jsonArray.getInt(element)])
                     .append(", ")
             }
         } else {

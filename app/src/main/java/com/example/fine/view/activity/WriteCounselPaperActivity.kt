@@ -2,6 +2,7 @@ package com.example.fine.view.activity
 
 import android.os.Bundle
 import android.widget.CheckBox
+import android.widget.RadioButton
 import android.widget.ViewFlipper
 import com.example.fine.R
 import com.example.fine.model.ChangePaperAll
@@ -155,13 +156,13 @@ class WriteCounselPaperActivity : BaseActivity(), WriteCounselPaperContract.View
             -1, -1, -1, -1, -1, null, null)
 
         // 성별, 출생연도, 직업
-        paper.gender = write_counsel_paper_rg_gender.checkedRadioButtonId
+        paper.gender = write_counsel_paper_rg_gender.indexOfChild(findViewById(write_counsel_paper_rg_gender.checkedRadioButtonId))
         paper.birth_year = Integer.parseInt(write_counsel_paper_et_birth_year.text.toString())
-        paper.job = write_counsel_paper_rg_job.checkedRadioButtonId
+        paper.job = write_counsel_paper_rg_job.indexOfChild(findViewById(write_counsel_paper_rg_job.checkedRadioButtonId))
 
         // 심리상담 경험여부, 정신과 경험 여부
-        paper.counselBefore = write_counsel_paper_rg_counselBefore.checkedRadioButtonId
-        paper.clinicBefore = write_counsel_paper_rg_clinicBefore.checkedRadioButtonId
+        paper.counselBefore = write_counsel_paper_rg_counselBefore.indexOfChild(findViewById(write_counsel_paper_rg_counselBefore.checkedRadioButtonId))
+        paper.clinicBefore = write_counsel_paper_rg_clinicBefore.indexOfChild(findViewById(write_counsel_paper_rg_clinicBefore.checkedRadioButtonId))
         // 주요문제
 //        val jsonArray_problem = JSONArray()
 //        for (i in checkboxList_problem.indices) {
@@ -180,11 +181,11 @@ class WriteCounselPaperActivity : BaseActivity(), WriteCounselPaperContract.View
 //        if(jsonArray_symptom.length()!=0) paper.symptom = jsonArray_symptom.toString()
 
         // 종교, 최종학력, 경제생활수준, 결혼여부, 동거인유무, 원가족관계(String), 전할말
-        paper.religion = write_counsel_paper_rg_religion.checkedRadioButtonId
-        paper.education = write_counsel_paper_rg_education.checkedRadioButtonId
-        paper.livingCondition = write_counsel_paper_rg_livingCondition.checkedRadioButtonId
-        paper.isMarried = write_counsel_paper_rg_isMarried.checkedRadioButtonId
-        paper.hasMate = write_counsel_paper_rg_hasMate.checkedRadioButtonId
+        paper.religion = write_counsel_paper_rg_religion.indexOfChild(findViewById(write_counsel_paper_rg_religion.checkedRadioButtonId))
+        paper.education = write_counsel_paper_rg_education.indexOfChild(findViewById(write_counsel_paper_rg_education.checkedRadioButtonId))
+        paper.livingCondition = write_counsel_paper_rg_livingCondition.indexOfChild(findViewById(write_counsel_paper_rg_livingCondition.checkedRadioButtonId))
+        paper.isMarried = write_counsel_paper_rg_isMarried.indexOfChild(findViewById(write_counsel_paper_rg_isMarried.checkedRadioButtonId))
+        paper.hasMate = write_counsel_paper_rg_hasMate.indexOfChild(findViewById(write_counsel_paper_rg_hasMate.checkedRadioButtonId))
         paper.family = write_counsel_paper_et_family.text.toString()
         paper.request = write_counsel_paper_et_request.text.toString()
 
@@ -193,27 +194,27 @@ class WriteCounselPaperActivity : BaseActivity(), WriteCounselPaperContract.View
 
     // 성별: 여, 남, 기타
     fun setGender(gender: Int?){
-        if(gender!=null){
-            write_counsel_paper_rg_gender.check(gender)
+        if(gender!=null && gender>-1){
+            write_counsel_paper_rg_gender.check(write_counsel_paper_rg_gender.getChildAt(gender).id)
 
         }
     }
     // 직업: 학생, 취업준비생, 직장인, 자영업/프리랜서, 무직, 기타
     fun setJob(job: Int?){
-        if(job!=null){
-            write_counsel_paper_rg_job.check(job)
+        if(job!=null && job>-1){
+            write_counsel_paper_rg_job.check(write_counsel_paper_rg_job.getChildAt(job).id)
         }
     }
     // 심리상담 경험 여부: 있다/없다
     fun setCounselBefore (counselBefore: Int?){
-        if(counselBefore!=null) {
-            write_counsel_paper_rg_counselBefore.check(counselBefore)
+        if(counselBefore!=null && counselBefore>-1) {
+            write_counsel_paper_rg_counselBefore.check(write_counsel_paper_rg_counselBefore.getChildAt(counselBefore).id)
         }
     }
     // 신경정신과 경험 여부: 있다(상담만), 있다(약물처방), 없다
     fun setClinicBefore (clinicBefore: Int?) {
-        if(clinicBefore!=null) {
-            write_counsel_paper_rg_clinicBefore.check(clinicBefore)
+        if(clinicBefore!=null && clinicBefore>-1) {
+            write_counsel_paper_rg_clinicBefore.check(write_counsel_paper_rg_clinicBefore.getChildAt(clinicBefore).id)
         }
     }
     /* 상담 원하는 주요문제: 일반, 연애, 대인관계, 정신건강, 자아/성격,
@@ -246,32 +247,34 @@ class WriteCounselPaperActivity : BaseActivity(), WriteCounselPaperContract.View
     }
     // 종교: 무교, 기독교, 천주교, 불교, 기타
     fun setReligion (religion: Int?) {
-        if(religion!=null) {
-            write_counsel_paper_rg_religion.check(religion)
+        if(religion!=null && religion>-1) {
+            write_counsel_paper_rg_religion.check(write_counsel_paper_rg_religion.getChildAt(religion).id)
         }
     }
     // 최종 학력: 중졸 이하, 고졸, 대학 재학, 대학 졸업, 석사 재학 이상
     fun setEducation (education: Int?) {
-        if(education!=null) {
-            write_counsel_paper_rg_education.check(education)
+        if(education!=null && education>-1) {
+            write_counsel_paper_rg_education.check(write_counsel_paper_rg_education.getChildAt(education).id)
         }
     }
     // 경제생활수준: 1~5
     fun setLivingCondition (livingCondition: Int?) {
-        if(livingCondition!=null) {
-            write_counsel_paper_rg_livingCondition.check(livingCondition)
+        if(livingCondition!=null && livingCondition>-1) {
+            write_counsel_paper_rg_livingCondition.check(write_counsel_paper_rg_livingCondition.getChildAt(livingCondition).id)
         }
     }
     // 결혼여부: 미혼, 기혼, 이혼, 사별
     fun setIsMarried ( isMarried: Int?) {
-        if(isMarried!=null) {
-            write_counsel_paper_rg_isMarried.check(isMarried)
+        if(isMarried!=null && isMarried>-1) {
+            val radioButton = findViewById<RadioButton>(write_counsel_paper_rg_isMarried.getChildAt(isMarried).id)
+            presenter.executionLog(TAG, "setIsMarried - isMarried=${isMarried} & id = ${radioButton.text}")
+            write_counsel_paper_rg_isMarried.check(write_counsel_paper_rg_isMarried.getChildAt(isMarried).id)
         }
     }
     // 동거인 유무: 있다, 없다
     fun setHasMate (hasMate: Int?) {
-        if(hasMate!=null){
-            write_counsel_paper_rg_isMarried.check(hasMate)
+        if(hasMate!=null && hasMate>-1){
+            write_counsel_paper_rg_hasMate.check(write_counsel_paper_rg_hasMate.getChildAt(hasMate).id)
         }
     }
 
