@@ -1,14 +1,16 @@
 package com.example.fine.presenter
 
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.content.SharedPreferences
-import com.example.fine.model.Paper
-import com.example.fine.model.ServerData_counselor
-import com.example.fine.model.ServerData_paper
-import com.example.fine.model.userData
+import android.view.View
+import androidx.appcompat.app.AlertDialog
+import com.example.fine.R
+import com.example.fine.model.*
 import com.example.fine.network.RetrofitClient
 import com.example.fine.view.activity.WriteCounselPaperActivity
+import kotlinx.android.synthetic.main.item_counsel_list.view.*
 import okhttp3.OkHttpClient
 import retrofit2.Call
 import retrofit2.Callback
@@ -18,6 +20,7 @@ class CheckCounselPaperPresenter : CheckCounselPaperContract.Presenter{
 
     var user: userData = userData("","","","",3, false)
     lateinit var preferences: SharedPreferences
+    var paper: Paper? = null
 
     override fun getUser() {
         preferences = mContext.getSharedPreferences("USERSIGN", 0)
@@ -67,6 +70,7 @@ class CheckCounselPaperPresenter : CheckCounselPaperContract.Presenter{
                         executionLog(TAG, result.message!!)
                         showMessage(result.message!!)
                         if(result.data!=null){
+                            paper = result.data
                             mView.showInfo(result.data!!)
                         }
                     }
@@ -74,6 +78,60 @@ class CheckCounselPaperPresenter : CheckCounselPaperContract.Presenter{
             }
         })
     }
+
+    fun loadCase() {
+        val client: OkHttpClient = RetrofitClient.getClient(mContext, "addCookie")
+        val apiService = RetrofitClient.serviceAPI(client)
+        val getCounselList_request : Call<ServerData_cases> = apiService.getCases()
+        getCounselList_request.enqueue(object : Callback<ServerData_cases> {
+            override fun onFailure(call: Call<ServerData_cases>, t: Throwable) {
+                executionLog(TAG, "getCounselList_request 실패")
+                executionLog(TAG, t.message!!)
+            }
+            override fun onResponse(call: Call<ServerData_cases>, response: Response<ServerData_cases>) {
+                if(response.isSuccessful){
+                    executionLog(TAG, "getCounselList_request 성공")
+                    val result: ServerData_cases = response.body()!!
+                    executionLog(TAG, result.toString())
+                    if(result.success){
+                        executionLog(TAG, result.message!!)
+                        showMessage(result.message!!)
+                        val list = result.data
+                        var caseDetail : case_detail? = null
+                        if(list!!.size!=0) {
+                             caseDetail = list.get(0)
+                        }
+                        mView.showDialog(caseDetail)
+                    }
+                }
+            }
+        })
+    }
+
+    fun applyPaper(case_id: Int) {
+        val client: OkHttpClient = RetrofitClient.getClient(mContext, "addCookie")
+        val apiService = RetrofitClient.serviceAPI(client)
+        val setPaper_request : Call<ServerData_case> = apiService.setPaper(case_id)
+        setPaper_request.enqueue(object : Callback<ServerData_case>{
+            override fun onFailure(call: Call<ServerData_case>, t: Throwable) {
+                executionLog(TAG, "setPaper_request 실패")
+                executionLog(TAG, t.message!!)
+            }
+            override fun onResponse(call: Call<ServerData_case>, response: Response<ServerData_case>) {
+                if(response.isSuccessful){
+                    executionLog(TAG, "setPaper_request 성공")
+                    val result: ServerData_case = response.body()!!
+                    executionLog(TAG, result.toString())
+                    if(result.success){
+                        executionLog(TAG, result.message!!)
+                        showMessage(result.message!!)
+                    }
+                }
+            }
+        })
+    }
+
+
 
     override lateinit var mView: CheckCounselPaperContract.View
     override lateinit var mContext: Context

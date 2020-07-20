@@ -8,12 +8,12 @@
         android:orientation="vertical"
         android:paddingTop="8dp"
         android:paddingBottom="8dp">
-    <TextView style="@style/Title" android:id="@+id/check_payment_title" android:text="채팅 상담 1회기권"
+    <TextView style="@style/Title" android:id="@+id/check_payment_tv_title"
               app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"/>
 
     <LinearLayout android:id="@+id/check_payment_linear" android:layout_width="match_parent"
                   android:layout_height="wrap_content"
-                  android:orientation="vertical" app:layout_constraintTop_toBottomOf="@+id/check_payment_title"
+                  android:orientation="vertical" app:layout_constraintTop_toBottomOf="@+id/check_payment_tv_title"
                   app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
                   android:padding="8dp">
 
@@ -39,17 +39,17 @@
                      android:background="@color/customLightGrey">
             <TableRow>
                 <TextView style="@style/Title2" android:text="정상가" android:layout_weight="1"/>
-                <TextView android:text="80000" android:layout_weight="1" android:gravity="end"/>
+                <TextView android:id="@+id/check_payment_tv_basic_price" android:text="80000" android:layout_weight="1" android:gravity="end"/>
             </TableRow>
             <TableRow>
                 <TextView style="@style/Title2" android:text="할인율" android:layout_weight="1"/>
-                <EditText android:layout_weight="1" android:gravity="end" android:hint="0"/>
+                <TextView android:id="@+id/check_payment_tv_discount_rate" android:layout_weight="1" android:gravity="end" android:hint="0"/>
                 <TextView android:text="%" android:gravity="end"/>
             </TableRow>
             <View style="@style/Divider"/>
             <TableRow>
                 <TextView style="@style/Title2" android:text="최종 금액" android:layout_weight="1"/>
-                <TextView style="@style/Title2" android:text="80000" android:textColor="@color/customRed"
+                <TextView android:id="@+id/check_payment_tv_total_price" style="@style/Title2" android:text="80000" android:textColor="@color/customRed"
                           android:layout_weight="1" android:gravity="end"/>
             </TableRow>
 
@@ -66,5 +66,5 @@
             android:backgroundTint="@color/customLightGreen"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:id="@+id/button"/>
+            android:id="@+id/check_payment_btn_create_case"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -36,18 +36,18 @@
                 <TableRow>
                     <TextView android:layout_width="100dp" android:layout_gravity="center_vertical" android:text="성별"/>
                     <TextView android:id="@+id/check_paper_tv_gender" android:gravity="center_vertical" android:textColor="@android:color/black"
-                              android:text="여"/>
+                              />
                 </TableRow>
                 <TableRow>
                     <TextView android:layout_width="100dp" android:layout_gravity="center_vertical"
                               android:text="출생연도"/>
                     <TextView android:id="@+id/check_paper_tv_birth_year" android:gravity="center_vertical" android:textColor="@android:color/black"
-                              android:text="1994"/>
+                              android:text="선택 안함" />
                 </TableRow>
                 <TableRow>
                     <TextView android:layout_width="100dp" android:layout_gravity="center_vertical" android:text="직업"/>
                     <TextView android:id="@+id/check_paper_tv_job" android:gravity="center_vertical" android:textColor="@android:color/black"
-                              android:text="취준생"/>
+                              />
                 </TableRow>
             </TableLayout>
 
@@ -67,25 +67,25 @@
                     <TextView android:layout_width="100dp" android:layout_gravity="center_vertical"
                               android:text="상담 경험"/>
                     <TextView android:id="@+id/check_paper_tv_counsel_before" android:gravity="center_vertical" android:textColor="@android:color/black"
-                              android:text="없음"/>
+                              />
                 </TableRow>
                 <TableRow>
                     <TextView android:layout_width="100dp" android:layout_gravity="center_vertical"
                               android:text="병원 진료 경험"/>
                     <TextView android:id="@+id/check_paper_tv_clinic_before" android:gravity="center_vertical" android:textColor="@android:color/black"
-                              android:text="없음"/>
+                              />
                 </TableRow>
                 <TableRow>
                     <TextView android:layout_width="100dp" android:layout_gravity="center_vertical"
                               android:text="나의 상황"/>
                     <TextView android:id="@+id/check_paper_tv_problem" android:gravity="center_vertical" android:textColor="@android:color/black"
-                              android:text="취업/진로"/>
+                              android:text="선택 안함" />
                 </TableRow>
                 <TableRow>
                     <TextView android:layout_width="100dp" android:layout_gravity="center_vertical"
                               android:text="심리적 어려움"/>
                     <TextView android:id="@+id/check_paper_tv_symptom" android:gravity="center_vertical" android:textColor="@android:color/black"
-                              android:text="우울, 무기력, 자존감.."/>
+                              android:text="선택 안함" />
                 </TableRow>
             </TableLayout>
 
@@ -104,37 +104,37 @@
                 <TableRow>
                     <TextView android:layout_width="100dp" android:layout_gravity="center_vertical" android:text="종교"/>
                     <TextView android:id="@+id/check_paper_tv_religion" android:gravity="center_vertical" android:textColor="@android:color/black"
-                              android:text="없음"/>
+                              />
                 </TableRow>
                 <TableRow>
                     <TextView android:layout_width="100dp" android:layout_gravity="center_vertical"
                               android:text="최종 학력"/>
                     <TextView android:id="@+id/check_paper_tv_education" android:gravity="center_vertical" android:textColor="@android:color/black"
-                              android:text="학사 졸업"/>
+                              />
                 </TableRow>
                 <TableRow>
                     <TextView android:layout_width="100dp" android:layout_gravity="center_vertical"
                               android:text="경제생활수준"/>
                     <TextView android:id="@+id/check_paper_tv_living_condition" android:gravity="center_vertical" android:textColor="@android:color/black"
-                              android:text="여유로운 편"/>
+                              />
                 </TableRow>
                 <TableRow>
                     <TextView android:layout_width="100dp" android:layout_gravity="center_vertical"
                               android:text="결혼 여부"/>
                     <TextView android:id="@+id/check_paper_tv_is_married" android:gravity="center_vertical" android:textColor="@android:color/black"
-                              android:text="미혼"/>
+                              />
                 </TableRow>
                 <TableRow>
                     <TextView android:layout_width="100dp" android:layout_gravity="center_vertical"
                               android:text="동거인 유무"/>
                     <TextView android:id="@+id/check_paper_tv_has_mate" android:gravity="center_vertical" android:textColor="@android:color/black"
-                              android:text="없음"/>
+                              />
                 </TableRow>
                 <TableRow>
                     <TextView android:layout_width="100dp" android:layout_gravity="center_vertical"
                               android:text="원가족관계"/>
-                    <TextView android:id="@+id/check_paper_tv_family" android:gravity="center_vertical" android:textColor="@android:color/black"
-                              android:text="부, 모, 동생"/>
+                    <TextView android:id="@+id/check_paper_tv_family" android:gravity="center_vertical" android:textColor="@android:color/black" android:text="미작성"
+                              />
                 </TableRow>
             </TableLayout>
 
@@ -151,8 +151,8 @@
                          android:layout_height="wrap_content" android:padding="16dp">
                 <TableRow>
                     <TextView android:layout_width="100dp" android:layout_gravity="center_vertical" android:text="내용"/>
-                    <TextView android:id="@+id/check_paper_tv_request" android:gravity="center_vertical" android:textColor="@android:color/black"
-                              android:text="미작성"/>
+                    <TextView android:id="@+id/check_paper_tv_request" android:gravity="center_vertical" android:textColor="@android:color/black" android:text="미작성"
+                              />
                 </TableRow>
             </TableLayout>
 

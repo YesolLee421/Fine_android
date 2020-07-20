@@ -75,17 +75,17 @@ class WriteCounselPaperActivity : BaseActivity(), WriteCounselPaperContract.View
                 " / id_symptom size =  ${checkboxId_symptom.size}")
 
         // problem
-//        for (index in problem.indices){
-//            val checkBox: CheckBox = findViewById(checkboxId_problem[index])
-//            checkBox.text = problem[index]
-//            checkboxList_problem.add(checkBox)
-//        }
-//        // symptom
-//        for (index in symptom.indices){
-//            val checkBox: CheckBox = findViewById(checkboxId_symptom[index])
-//            checkBox.text = symptom[index]
-//            checkboxList_problem.add(checkBox)
-//        }
+        for (index in problem.indices){
+            val checkBox: CheckBox = findViewById(checkboxId_problem[index])
+            checkBox.text = problem[index]
+            checkboxList_problem.add(checkBox)
+        }
+        // symptom
+        for (index in symptom.indices){
+            val checkBox: CheckBox = findViewById(checkboxId_symptom[index])
+            checkBox.text = symptom[index]
+            checkboxList_symptom.add(checkBox)
+        }
     }
     override fun initPresenter() {
         presenter = WriteCounselPaperPresenter()
@@ -106,9 +106,11 @@ class WriteCounselPaperActivity : BaseActivity(), WriteCounselPaperContract.View
         // 정신과 경험
         setClinicBefore(paper.clinicBefore)
         // 주요문제
-//        setProblem(paper.problem)
+        presenter.executionLog(TAG, "problem=${paper.problem}")
+        setProblem(paper.problem)
 //        // 증상
-//        setSymptom(paper.symptom)
+        presenter.executionLog(TAG, "symptom=${paper.symptom}")
+        setSymptom(paper.symptom)
         // 종교
         setReligion(paper.religion)
         // 최종학력
@@ -153,32 +155,34 @@ class WriteCounselPaperActivity : BaseActivity(), WriteCounselPaperContract.View
     fun savePaper() : ChangePaperAll {
         // paper 객체 만들기
         val paper: ChangePaperAll = ChangePaperAll(-1, -1, -1, -1, -1, null, null,
-            -1, -1, -1, -1, -1, null, null)
+            -1, -1, -1, -1, -1,"","")
 
         // 성별, 출생연도, 직업
         paper.gender = write_counsel_paper_rg_gender.indexOfChild(findViewById(write_counsel_paper_rg_gender.checkedRadioButtonId))
-        paper.birth_year = Integer.parseInt(write_counsel_paper_et_birth_year.text.toString())
+        if(write_counsel_paper_et_birth_year.text.toString()!="") paper.birth_year = Integer.parseInt(write_counsel_paper_et_birth_year.text.toString())
         paper.job = write_counsel_paper_rg_job.indexOfChild(findViewById(write_counsel_paper_rg_job.checkedRadioButtonId))
 
         // 심리상담 경험여부, 정신과 경험 여부
         paper.counselBefore = write_counsel_paper_rg_counselBefore.indexOfChild(findViewById(write_counsel_paper_rg_counselBefore.checkedRadioButtonId))
         paper.clinicBefore = write_counsel_paper_rg_clinicBefore.indexOfChild(findViewById(write_counsel_paper_rg_clinicBefore.checkedRadioButtonId))
         // 주요문제
-//        val jsonArray_problem = JSONArray()
-//        for (i in checkboxList_problem.indices) {
-//            if(checkboxList_problem[i].isChecked) {
-//                jsonArray_problem.put(i)
-//            }
-//        }
-//        if(jsonArray_problem.length()!=0) paper.problem = jsonArray_problem.toString()
-//        // 주요증상
-//        val jsonArray_symptom = JSONArray()
-//        for(i in checkboxList_symptom.indices) {
-//            if(checkboxList_symptom[i].isChecked) {
-//                jsonArray_symptom.put(i)
-//            }
-//        }
-//        if(jsonArray_symptom.length()!=0) paper.symptom = jsonArray_symptom.toString()
+        val jsonArray_problem = JSONArray()
+        for (i in checkboxList_problem.indices) {
+            if(checkboxList_problem[i].isChecked) {
+                jsonArray_problem.put(i)
+            }
+        }
+        presenter.executionLog(TAG, "jsonArray_problem=${jsonArray_problem}")
+        if(jsonArray_problem.length()!=0) paper.problem = jsonArray_problem
+        // 주요증상
+        val jsonArray_symptom = JSONArray()
+        for(i in checkboxList_symptom.indices) {
+            if(checkboxList_symptom[i].isChecked) {
+                jsonArray_symptom.put(i)
+            }
+        }
+        presenter.executionLog(TAG, "jsonArray_symptom=${jsonArray_symptom}")
+        if(jsonArray_symptom.length()!=0) paper.symptom = jsonArray_symptom
 
         // 종교, 최종학력, 경제생활수준, 결혼여부, 동거인유무, 원가족관계(String), 전할말
         paper.religion = write_counsel_paper_rg_religion.indexOfChild(findViewById(write_counsel_paper_rg_religion.checkedRadioButtonId))
@@ -225,8 +229,8 @@ class WriteCounselPaperActivity : BaseActivity(), WriteCounselPaperContract.View
         if(json!==null) {
             val problem = JSONArray(json)
             if(problem.length()!=0) {
-                for (element in 0 until problem.length()){
-                    checkboxList_problem[element].isChecked = true
+                for (index in 0 until problem.length()){
+                    checkboxList_problem[problem.getInt(index)].isChecked = true
                 }
             }
         }
@@ -239,8 +243,8 @@ class WriteCounselPaperActivity : BaseActivity(), WriteCounselPaperContract.View
         if(json!==null) {
             val symptom = JSONArray(json)
             if(symptom.length()!=0) {
-                for (element in 0 until symptom.length()){
-                    checkboxList_symptom[element].isChecked = true
+                for (index in 0 until symptom.length()){
+                    checkboxList_symptom[symptom.getInt(index)].isChecked = true
                 }
             }
         }
