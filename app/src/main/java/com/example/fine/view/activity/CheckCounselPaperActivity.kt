@@ -138,13 +138,13 @@ class CheckCounselPaperActivity : BaseActivity(), CheckCounselPaperContract.View
         }
 
 
-        check_paper_btn_apply.setOnClickListener {
-            if(isCompleted) {
-                presenter.loadCase()
-            } else {
-                presenter.showMessage("상담접수지 문항을 전부 채워야 제출할 수 있습니다.")
-            }
-        }
+//        check_paper_btn_apply.setOnClickListener {
+//            if(isCompleted) {
+//                presenter.loadCase()
+//            } else {
+//                presenter.showMessage("상담접수지 문항을 전부 채워야 제출할 수 있습니다.")
+//            }
+//        }
     }
 
     override fun showDialog (caseDetail: case_detail?) {

@@ -32,6 +32,7 @@ class CheckPaymentActivity : BaseActivity() , CheckPaymentContract.View {
     override fun showInfo() {
         setCaseTitle()
         check_payment_tv_basic_price.text = getCurrency(price*totalCount)
+        presenter.executionLog(TAG, "discountRate=${discountRate}")
         check_payment_tv_discount_rate.text = discountRate.toString()
         check_payment_tv_total_price.text = getCurrency(price*totalCount*(100-discountRate)/100)
     }
@@ -63,7 +64,7 @@ class CheckPaymentActivity : BaseActivity() , CheckPaymentContract.View {
 
         check_payment_btn_create_case.setOnClickListener {
             if(counselor_id!=null) {
-                presenter.createCase(createCase(counselor_id!!, price, totalCount, discountRate))
+                presenter.createCase(createCase(counselor_id!!, totalCount, price, discountRate))
             }
 
         }

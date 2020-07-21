@@ -14,6 +14,7 @@ import java.util.*
 
 class CaseDetailActivity : BaseActivity(), CaseDetailContract.View {
     override fun showInfo(case: case_detail) {
+
         // 상담사 사진 & 이름
         // case_detail_iv_counselor_picture
         case_detail_tv_counselor_name.text = "${case.counselor_name} 상담사"
@@ -46,6 +47,7 @@ class CaseDetailActivity : BaseActivity(), CaseDetailContract.View {
     override val TAG: String = "CaseDetailActivity"
     lateinit var caseDetailPresenter: CaseDetailPresenter
     var paper_id : Int = -1
+    var case_id: Int = -1
 
     override fun initPresenter() {
         caseDetailPresenter = CaseDetailPresenter()
@@ -56,9 +58,10 @@ class CaseDetailActivity : BaseActivity(), CaseDetailContract.View {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_case_detail)
+        case_id = intent.getIntExtra("case_id", -1)
 
         case_detail_btn.setOnClickListener { // 채팅상담 시작
-            caseDetailPresenter.startChatRoomActivity()
+            caseDetailPresenter.startChatRoomActivity(case_id)
         }
         case_detail_btn_paper.setOnClickListener {
             caseDetailPresenter.startCheckPaperActivity(paper_id)

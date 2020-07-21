@@ -10,13 +10,23 @@ import java.text.NumberFormat
 import java.util.*
 
 class RequestCounselingActivity : BaseActivity(), RequestCounselingContract.View {
+
+    override val TAG: String = "RequestCounselingActivity"
+    lateinit var presenter: RequestCounselingPresenter
+
+    var discountRate_4w: Int = 0
+    var discountRate_10w: Int = 0
+
+
     override fun showInfo(price: Int, discount_4w: Int, discount_10w: Int) {
 
         if(discount_4w>0){
             request_counseling_tv_title_4.text = "4주 프로그램 (${discount_4w}% 할인)"
+            discountRate_4w = discount_4w
         }
         if(discount_10w>0){
             request_counseling_tv_title_10.text = "10주 프로그램 (${discount_10w}% 할인)"
+            discountRate_10w = discount_10w
         }
 
         request_counseling_tv_price_1.text = getCurrency(price)
@@ -29,12 +39,6 @@ class RequestCounselingActivity : BaseActivity(), RequestCounselingContract.View
         val nf = NumberFormat.getCurrencyInstance(Locale.KOREA)
         return nf.format(price)
     }
-
-    override val TAG: String = "RequestCounselingActivity"
-    lateinit var presenter: RequestCounselingPresenter
-
-    val discount_4w: Int = 0
-    val discount_10w:Int = 0
 
     override fun initPresenter() {
         presenter = RequestCounselingPresenter()
@@ -55,10 +59,10 @@ class RequestCounselingActivity : BaseActivity(), RequestCounselingContract.View
             presenter.startPaymentActivity(2,0)
         }
         request_counseling_cv_4.setOnClickListener {
-            presenter.startPaymentActivity(4, discount_4w)
+            presenter.startPaymentActivity(4, discountRate_4w)
         }
         request_counseling_cv_10.setOnClickListener {
-            presenter.startPaymentActivity(10, discount_10w)
+            presenter.startPaymentActivity(10, discountRate_10w)
         }
     }
 

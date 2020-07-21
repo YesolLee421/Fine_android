@@ -9,7 +9,7 @@ interface CaseDetailContract {
         fun showInfo(case: case_detail)
     }
     interface Presenter : BasePresenter<View>{
-        fun startChatRoomActivity()
+        fun startChatRoomActivity(case_id: Int)
         fun startCheckPaperActivity(paper_id: Int)
         fun loadData (case_id: Int)
     }

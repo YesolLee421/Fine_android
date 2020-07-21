@@ -49,6 +49,7 @@ class RequestCounselingPresenter : RequestCounselingContract.Presenter {
         intent.putExtra("counselor_id", counselorData.user_uid)
         intent.putExtra("price", counselorData.price)
         intent.putExtra("totalCount", totalCount)
+        executionLog(TAG, "discountRate=${discountRate}")
         intent.putExtra("discountRate", discountRate)
         mContext.startActivity(intent)
     }

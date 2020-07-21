@@ -23,10 +23,12 @@ class CaseDetailPresenter: CaseDetailContract.Presenter {
         mContext.startActivity(intent)
     }
 
-    override fun startChatRoomActivity() {
+    override fun startChatRoomActivity(case_id: Int) {
         showMessage("채팅 상담방으로 이동")
         executionLog(TAG, "채팅 상담방으로 이동")
-        mContext.startActivity(Intent(mContext, ChatRoomActivity::class.java))
+        val intent = Intent(mContext, CheckCounselPaperActivity::class.java)
+        intent.putExtra("case_id", case_id)
+        mContext.startActivity(intent)
     }
 
     override fun loadData(case_id: Int) {
