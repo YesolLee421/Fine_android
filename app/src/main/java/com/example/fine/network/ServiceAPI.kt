@@ -4,6 +4,7 @@ import com.example.fine.model.*
 import com.google.gson.JsonObject
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
+import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -100,6 +101,10 @@ interface ServiceAPI {
 
     @PUT("/paper")
     fun changePaper(@Body paper: ChangePaperAll) : Call<ServerData_paper>
+
+    // 채팅 불러오기
+    @GET("/chat/{case_id}")
+    fun getMessages(@Path("case_id") case_id: Int): Call<ServerData_messages>
 
 
 }

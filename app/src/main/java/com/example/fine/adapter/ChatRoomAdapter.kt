@@ -5,10 +5,13 @@ import android.view.LayoutInflater
 import android.view.TextureView
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fine.R
 import kotlinx.android.synthetic.main.item_chat_room_client.view.*
+import org.json.JSONException
 import org.json.JSONObject
+import java.sql.Timestamp
 
 class ChatRoomAdapter (
     val context: Context
@@ -49,7 +52,7 @@ class ChatRoomAdapter (
     }
 
     override fun getItemViewType(position: Int): Int {
-        val message: JSONObject = messages.get(position)
+        val message: JSONObject = messages[position]
         when (message.getInt("type")) {
             0 -> {
                 if(message.has("message")) {
@@ -70,48 +73,90 @@ class ChatRoomAdapter (
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        val message: JSONObject = messages[position]
+
         when(holder) {
             is SentMessageViewHolder->{
-
+                holder.bind(messages[position], context)
             }
             is ReceivedMessageViewHolder->{
-
+                holder.bind(messages[position], context)
             }
             is NoticeViewHolder->{
-
+                holder.bind(messages[position], context)
             }
             is SentImageViewHolder-> {
-
+                //holder.bind(messages[position], context)
             }
             is ReceivedImageViewHolder->{
-
+                //holder.bind(messages[position], context)
             }
         }
     }
 
+//    fun changeStampToTime (jsonObject: JSONObject) : String {
+//
+//        return timestamp.toString()
+//    }    fun changeStampToTime (jsonObject: JSONObject) : String {
+////
+////        return timestamp.toString()
+////    }
+
+    fun addItem (jsonObject: JSONObject) {
+        messages.add(jsonObject)
+        notifyDataSetChanged()
+    }
+
+    fun clearItem () {
+        messages.clear()
+    }
+
+
+
     class SentMessageViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        val sent_content = itemView.findViewById<TextureView>(R.id.item_chat_client_content)
-        val sent_time = itemView.findViewById<TextureView>(R.id.item_chat_client_time)
+        val sent_content = itemView.findViewById<TextView>(R.id.item_chat_client_content)
+        val sent_time = itemView.findViewById<TextView>(R.id.item_chat_client_time)
+
+        fun bind(item: JSONObject?, context: Context) {
+            sent_content.text = item?.getString("message")
+            //sent_time.text = changeStampToTime(item?.get("created_at"))
+
+            //itemView.setOnLongClickListener {} // 추후 context 메뉴 등 필요하면 사용
+        }
+
     }
 
     class ReceivedMessageViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        val received_content = itemView.findViewById<TextureView>(R.id.item_chat_counselor_content)
-        val received_time = itemView.findViewById<TextureView>(R.id.item_chat_counselor_time)
+        val received_content = itemView.findViewById<TextView>(R.id.item_chat_counselor_content)
+        val received_time = itemView.findViewById<TextView>(R.id.item_chat_counselor_time)
+
+        fun bind(item: JSONObject?, context: Context) {
+            received_content.text
+        }
     }
 
     class NoticeViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        val notice_title = itemView.findViewById<TextureView>(R.id.item_chat_notice_title)
-        val notice_content = itemView.findViewById<TextureView>(R.id.item_chat_notice_content)
+        val notice_title = itemView.findViewById<TextView>(R.id.item_chat_notice_title)
+        val notice_content = itemView.findViewById<TextView>(R.id.item_chat_notice_content)
+        fun bind(item: JSONObject?, context: Context) {
+            notice_content.text = item?.getString("message")
+        }
     }
 
     class SentImageViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         // val sent_file
-        val sent_time = itemView.findViewById<TextureView>(R.id.item_chat_client_time)
+        val sent_time = itemView.findViewById<TextView>(R.id.item_chat_client_time)
+//        fun bind(item: JSONObject?, context: Context) {
+//            sent_time.text = item?.getString("message")
+//        }
     }
 
     class ReceivedImageViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         //val received_file
-        val received_time = itemView.findViewById<TextureView>(R.id.item_chat_counselor_time)
+        val received_time = itemView.findViewById<TextView>(R.id.item_chat_counselor_time)
+//        fun bind(item: JSONObject?, context: Context) {
+//            received_time.text = item?.getString("message")
+//        }
     }
 
 }
