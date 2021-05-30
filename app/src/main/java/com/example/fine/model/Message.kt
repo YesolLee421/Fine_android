@@ -11,3 +11,10 @@ data class ServerData_messages (
     @SerializedName("message")
     var message: String? = ""
 )
+
+data class initChat(
+    var user_uid: String,
+    var username: String,
+    var room_id: Int,
+    var userType: Int
+)

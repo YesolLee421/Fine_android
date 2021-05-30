@@ -8,9 +8,12 @@ import com.example.fine.R
 import com.example.fine.adapter.ChatRoomAdapter
 import com.example.fine.presenter.ChatRoomContract
 import com.example.fine.presenter.ChatRoomPresenter
+import com.github.nkzawa.emitter.Emitter
 import com.github.nkzawa.socketio.client.IO
 import com.github.nkzawa.socketio.client.Socket
 import kotlinx.android.synthetic.main.activity_chat_room.*
+import okhttp3.OkHttpClient
+import okhttp3.Request
 import java.net.URISyntaxException
 
 
@@ -25,7 +28,10 @@ class ChatRoomActivity : BaseActivity(), ChatRoomContract.View {
     lateinit var lm: LinearLayoutManager
     // 어댑터
     lateinit var mAdapter: ChatRoomAdapter
-    // 리스트
+
+    private lateinit var mSocket: Socket
+    val SERVER_PATH = "http://10.0.2.2:5000/"
+    var case_id: Int = -1
 
     fun setRecyclerView() {
         mList = findViewById(R.id.chat_room_rv)
@@ -35,17 +41,14 @@ class ChatRoomActivity : BaseActivity(), ChatRoomContract.View {
 
         mAdapter = ChatRoomAdapter(this)
         mList.adapter = mAdapter
+        presenter.adapter = mAdapter
     }
-
-    private var mSocket: Socket? = null
-
-
-    var case_id: Int = -1
 
     override fun initPresenter() {
         presenter = ChatRoomPresenter()
         presenter.mContext = this
         presenter.mView = this
+
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -63,15 +66,24 @@ class ChatRoomActivity : BaseActivity(), ChatRoomContract.View {
         case_id = intent.getIntExtra("case_id", -1)
 
         chat_room_btn_send.setOnClickListener {
-            val message: String = chat_room_et_input.text.toString()
-            if(message!="") {
+            val message: String = chat_room_et_input.text.toString().trim()
+            if(!message.isEmpty()) {
                 presenter.sendMessage(message)
+                chat_room_et_input.setText("");
             }
+
         }
+        presenter.connectSocket(mSocket, case_id)
     }
 
     override fun onStart() {
         super.onStart()
+        presenter.getUser()
         presenter.loadItems(case_id, mAdapter)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        presenter.disconnectSocket()
     }
 }
